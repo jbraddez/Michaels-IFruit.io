@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFruit- Michael De Santa</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="top-sections">
+        <header>
+            <div class="info">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-160v-240h120v240H200Zm240 0v-440h120v440H440Zm240 0v-640h120v640H680Z"/></svg>
+                <img src="./images/infoimg.png" alt="ISP logo (Internet Service Provider Logo)">
+                <p id="day"></p>
+            </div>
+            <p id="time">00:00</p>
+            <svg id="battery" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 200 150">
+                <rect id="batteryOutline" x="10" y="35" width="180" height="80"/>
+                <rect x="190" y="55" width="10" height="40" id="batteryCharger"/>
+                <rect id="batteryFill" x="15" y="40" width="0" height="70"/>
+              </svg>
+        </header>
+    
+        <h3 id="appnamecont">Contacts</h3>
+    </div>
+
+   <div class="appgrid">
+    <div class="grid-container">
+        <div class="grid-item" onclick="ChangeName('Email', event)"><img src="./images/email.jpg" alt="Email"></div>
+        <div class="grid-item" onclick="ChangeName('Texts', event)"><img src="./images/texts.jpg" alt="Texts"></div>
+        <div class="grid-item" onclick="ChangeName('Job List', event)"><img src="./images/joblist.jpg" alt="Job List"></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item" onclick="ChangeName('Quick Save', event)"><img src="./images/quicksave.jpg" alt="Quick Save"></div>
+        <div class="grid-item" onclick="ChangeName('Contacts', event)"><img src="./images/contacts.jpg" alt="Contacts"></div>
+        <div class="grid-item" onclick="ChangeName('Settings', event)"><img src="./images/settings.jpg" alt="Settings"></div>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item" onclick="ChangeName('Snapmatic', event)"><img src="./images/snapmatic.jpg" alt="Snapmatic"></div>
+        <div class="grid-item" onclick="ChangeName('Internet', event)"><img src="./images/internet.jpg" alt="Internet"></div>
+        <div class="grid-item"><img src="./images/empty.png" alt="Empty"></div> 
+      </div>
+   </div>
+
+   <div class="bottom">
+    <div class="select-options">
+        <button class="select"></button>
+        <button id="plus" class="select plus"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
+        <button class="select back"><img src="./images/backarrow.svg" alt="Back"></button>
+    </div>
+ 
+    <div class="bottom-options">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+        <img src="./images/ifruit.webp" alt="IFruit logo">
+        <img src="./images/bottomback.svg" alt="Back Arrow">
+    </div>
+   </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

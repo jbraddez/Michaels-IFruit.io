@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-weight: 500;
+}
+
+body {
+    height: 100dvh;
+    max-height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
+    background-image: url(./images/wallpaper.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 2rem;
+    justify-self: flex-start;
+}
+
+.info img, .info svg{
+    height: 100%;
+}
+
+.info img{
+    height: 1.5rem;
+}
+
+#time{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.1rem;
+}
+
+#battery {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 5px;
+}
+
+#batteryOutline {
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+}
+#batteryFill {
+    fill: white;
+}
+#batteryCharger {
+    fill: white;
+}
+
+#appnamecont{
+    background: linear-gradient(to bottom, #91b5ee 49%, #527ebd 51%);
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* app grid */
+.appgrid{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    gap: 20px;
+}
+  
+  .grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80px;
+    cursor: pointer;
+  }
+
+  .grid-item img.focus{
+    border: 2px solid #727379;
+    scale: 1.15;
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15%;
+  }
+
+  /* bottom options */
+.bottom div{
+    height: 3rem;
+    width: 100%;
+}
+
+.select-options{
+    border-top: 0.15rem solid #727379;
+    background: linear-gradient(to bottom,#1f1f21 49%, #000 51% );
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.plus svg{
+    fill: #11d011;
+}
+
+#plus{
+    border-left: 0.05rem solid #727379;
+    border-right: 0.05rem solid #727379;
+}
+
+#plus,.back{
+    cursor: pointer;
+}
+
+.select-options button{
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin: 3px 0;
+}
+.select-options img{
+    height: 80%;
+    aspect-ratio: 1/1;
+}
+.select-options svg{
+    width: 100%;
+    height: 100%;
+}
+
+.bottom-options{
+    background: #000;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.bottom-options svg{
+    transform: scaleX(-1);
+}
+.bottom-options svg, .bottom-options img{
+    max-height: 1.5rem;
+    fill: #1f1f21;
+    filter: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(459%) hue-rotate(201deg) brightness(92%) contrast(89%);
+}
