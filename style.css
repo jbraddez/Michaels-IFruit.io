@@ -194,3 +194,7 @@ header {
     max-height: 1rem;
     display: none;
 }
+
+.bottom-options img:nth-child(2){
+    cursor: pointer;
+}

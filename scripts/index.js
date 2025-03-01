@@ -16,3 +16,4 @@ const plus = document.getElementById('plus');
 plus.addEventListener('click', ()=>{
     window.location.href = `/apps/${appTarget}.html`;
 })
+

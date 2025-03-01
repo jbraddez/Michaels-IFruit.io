@@ -56,3 +56,13 @@ const sleep = document.querySelector('.sleep');
 if (storedMode1 == 'Sleep Mode'){
    sleep.style.display = 'block';
 }
+
+
+//home button
+const homeBtn = document.querySelector('.bottom-options img:nth-child(2)');
+homeBtn.addEventListener('click', () => {
+    const currentPage = window.location.pathname;
+    if (currentPage !== '/' && !currentPage.endsWith('index.html')) {
+        window.location.href = '/';
+    }
+});

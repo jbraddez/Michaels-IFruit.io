@@ -70,7 +70,7 @@
                 <h3>Theme</h3>
             </button>
             <button onclick="NextTarget(event)" class="row endofrows">
-                <img src="/images/vibrate.png" alt="Vibrate">
+                <img id="vibrateicon" src="/images/vibrate.png" alt="Vibrate">
                 <h3>Vibrate</h3>
             </button>
         </div>
@@ -94,7 +94,7 @@
 
    <script>
     const settings = document.querySelectorAll('.row');
-    let appTarget = 'false';
+    let appTarget = 'background';
 
     function NextTarget(event) {
         settings.forEach(el => el.classList.remove('focus'));
@@ -103,14 +103,21 @@
         const img = clickedItem.querySelector('img');
         appTarget = img.alt.toLowerCase();
     }
+    settings[0].classList.add('focus');
 
     const plus = document.getElementById('plus');
     plus.addEventListener('click', () => {
-        if (appTarget !== 'false') {
             window.location.href = `/apps/settings/${appTarget}.html`;
-        }
     });
 
+    //vibration icon
+    const vibration = localStorage.getItem('vibration');
+    const vibrateIcon = document.getElementById('vibrateicon');
+    if(vibration == 'Off'){
+        vibrateIcon.src = '/images/novibrate.png';
+    }else{
+        vibrateIcon.src = '/images/vibrate.png';
+    }
    </script>
     <script src="/scripts/script.js"></script>
 </body>

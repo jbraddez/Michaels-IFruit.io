@@ -47,13 +47,20 @@
                   </svg>
             </div>
         </header>
-    <h3 class="appnamecont">[current]</h3>
+    <h3 class="appnamecont">On</h3>
     </div>
 
 
     <main>
         <div class="content">
-            
+            <button onclick="NextTarget(event, 'Off')" class="subrow row endofrows">
+                <img src="/images/novibrate.png" alt="Off">
+                <h3>Off</h3>
+            </button>
+            <button onclick="NextTarget(event, 'On')" class="subrow row endofrows">
+                <img src="/images/vibrate.png" alt="On">
+                <h3>On</h3>
+            </button>
         </div>
     </main>
 
@@ -74,13 +81,25 @@
    </div>
 
    <script>
-    const settings = document.querySelectorAll('.row');
-    function NextTarget(event) {
-        settings.forEach(el => el.classList.remove('focus'));
+    const vibrate_settings = document.querySelectorAll('.row');
+    const topName = document.querySelector('.appnamecont');
+    function NextTarget(event, name) {
+        vibrate_settings.forEach(el => el.classList.remove('focus'));
         const clickedItem = event.currentTarget;
         clickedItem.classList.add('focus');
-        const img = clickedItem.querySelector('img');
+        topName.innerText = name;
+        console.log(event.currentTarget)
+        localStorage.setItem('vibration', name);
     }
+
+    const vibration = localStorage.getItem('vibration');
+    if(vibration == 'Off'){
+        vibrate_settings[0].classList.add('focus');
+        topName.innerText = 'Off';
+    }else{
+        vibrate_settings[1].classList.add('focus');
+    }
+
    </script>
     <script src="/scripts/script.js"></script>
 </body>
