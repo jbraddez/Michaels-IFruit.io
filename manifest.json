@@ -1,0 +1,22 @@
+{
+    "name": "Michael's IFruit",
+    "short_name": "IFruit",
+    "description": "A fanmade website of Michael De Santa's IFruit phone from GTAV story mode.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "icons": [
+      {
+        "src": "/images/ifruit.webp",
+        "sizes": "192x192",
+        "type": "image/webp"
+      },
+      {
+        "src": "/images/ifruit.webp",
+        "sizes": "512x512",
+        "type": "image/webp"
+      }
+    ]
+  }
+  
