@@ -183,3 +183,14 @@ header {
     fill: #1f1f21;
     filter: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(459%) hue-rotate(201deg) brightness(92%) contrast(89%);
 }
+
+.righthead{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.sleep{
+    filter: invert(1);
+    max-height: 1rem;
+    display: none;
+}

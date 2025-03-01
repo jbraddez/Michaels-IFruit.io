@@ -50,3 +50,9 @@ if (doc.requestFullscreen) {
 }
 goFullScreen(); 
   
+const storedMode1 = localStorage.getItem('mode');
+const righthead = document.querySelector('.righthead');
+const sleep = document.querySelector('.sleep');
+if (storedMode1 == 'Sleep Mode'){
+   sleep.style.display = 'block';
+}

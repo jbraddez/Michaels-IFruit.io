@@ -38,11 +38,14 @@
                 <p id="day"></p>
             </div>
             <p id="time">00:00</p>
-            <svg id="battery" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 200 150">
-                <rect id="batteryOutline" x="10" y="35" width="180" height="80"/>
-                <rect x="190" y="55" width="10" height="40" id="batteryCharger"/>
-                <rect id="batteryFill" x="15" y="40" width="0" height="70"/>
-              </svg>
+            <div class="righthead">
+                <img class="sleep" src="/images/sleep.png" alt="Sleep Mode">
+                <svg id="battery" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 200 150">
+                    <rect id="batteryOutline" x="10" y="35" width="180" height="80"/>
+                    <rect x="190" y="55" width="10" height="40" id="batteryCharger"/>
+                    <rect id="batteryFill" x="15" y="40" width="0" height="70"/>
+                  </svg>
+            </div>
         </header>
     <h3 class="appnamecont">Settings</h3>
     </div>
@@ -50,23 +53,23 @@
 
     <main>
         <div class="content">
-            <button onclick="NextTarget(event)" href="/apps/settings/background.html" class="row">
+            <button onclick="NextTarget(event)" class="row">
                 <img src="/images/theme.png" alt="Background">
                 <h3>Background</h3>
             </button>
-            <button onclick="NextTarget(event)" href="/apps/settings/profile.html" class="row">
+            <button onclick="NextTarget(event)" class="row">
                 <img src="/images/profile.png" alt="Profile">
                 <h3>Profile</h3>
             </button>
-            <button onclick="NextTarget(event)" href="/apps/settings/ringtone.html" class="row">
+            <button onclick="NextTarget(event)" class="row">
                 <img src="/images/ringtone.png" alt="Ringtone">
                 <h3>Ringtone</h3>
             </button>
-            <button onclick="NextTarget(event)" href="/apps/settings/theme.html" class="row">
+            <button onclick="NextTarget(event)" class="row">
                 <img src="/images/theme.png" alt="Theme">
                 <h3>Theme</h3>
             </button>
-            <button onclick="NextTarget(event)" href="/apps/settings/vibrate.html" class="row endofrows">
+            <button onclick="NextTarget(event)" class="row endofrows">
                 <img src="/images/vibrate.png" alt="Vibrate">
                 <h3>Vibrate</h3>
             </button>

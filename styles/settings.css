@@ -27,6 +27,10 @@ main{
     cursor: pointer;
 }
 
+.subrow{
+    max-height: 5rem;
+}
+
 .row:not(.endofrows){
     border-bottom: 2px solid rgba(55,55,55,0.3);
 }
@@ -34,6 +38,7 @@ main{
 .row img {
     max-height: 4rem;
 }
+
 
 .row h3 {
     font-size: 2rem;
