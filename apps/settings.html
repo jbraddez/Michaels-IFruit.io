@@ -27,6 +27,7 @@
 
     <link rel="apple-touch-startup-image" href="/wallpapers/1.jpg">
 
+    <link rel="stylesheet" href="/styles/settings.css">
 </head>
 <body>
     <div class="top-sections">
@@ -43,11 +44,33 @@
                 <rect id="batteryFill" x="15" y="40" width="0" height="70"/>
               </svg>
         </header>
+    <h3 class="appnamecont">Settings</h3>
     </div>
 
 
     <main>
-        
+        <div class="content">
+            <button onclick="NextTarget(event)" href="/apps/settings/background.html" class="row">
+                <img src="/images/theme.png" alt="Background">
+                <h3>Background</h3>
+            </button>
+            <button onclick="NextTarget(event)" href="/apps/settings/profile.html" class="row">
+                <img src="/images/profile.png" alt="Profile">
+                <h3>Profile</h3>
+            </button>
+            <button onclick="NextTarget(event)" href="/apps/settings/ringtone.html" class="row">
+                <img src="/images/ringtone.png" alt="Ringtone">
+                <h3>Ringtone</h3>
+            </button>
+            <button onclick="NextTarget(event)" href="/apps/settings/theme.html" class="row">
+                <img src="/images/theme.png" alt="Theme">
+                <h3>Theme</h3>
+            </button>
+            <button onclick="NextTarget(event)" href="/apps/settings/vibrate.html" class="row endofrows">
+                <img src="/images/vibrate.png" alt="Vibrate">
+                <h3>Vibrate</h3>
+            </button>
+        </div>
     </main>
 
    
@@ -56,7 +79,7 @@
     <div class="select-options">
         <button class="select"></button>
         <button id="plus" class="select plus"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
-        <button class="select back"><img src="/images/backarrow.svg" alt="Back"></button>
+        <button onclick="window.history.back();" class="select back"><img src="/images/backarrow.svg" alt="Back"></button>
     </div>
  
     <div class="bottom-options">
@@ -66,6 +89,26 @@
     </div>
    </div>
 
+   <script>
+    const settings = document.querySelectorAll('.row');
+    let appTarget = 'false';
+
+    function NextTarget(event) {
+        settings.forEach(el => el.classList.remove('focus'));
+        const clickedItem = event.currentTarget;
+        clickedItem.classList.add('focus');
+        const img = clickedItem.querySelector('img');
+        appTarget = img.alt.toLowerCase();
+    }
+
+    const plus = document.getElementById('plus');
+    plus.addEventListener('click', () => {
+        if (appTarget !== 'false') {
+            window.location.href = `/apps/settings/${appTarget}.html`;
+        }
+    });
+
+   </script>
     <script src="/scripts/script.js"></script>
 </body>
 </html>

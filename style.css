@@ -72,7 +72,7 @@ header {
     fill: white;
 }
 
-#appnamecont{
+#appnamecont,.appnamecont{
     background: linear-gradient(to bottom, #91b5ee 49%, #527ebd 51%);
     padding: 1rem;
     width: 100%;
