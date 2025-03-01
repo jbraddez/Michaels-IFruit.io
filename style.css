@@ -5,6 +5,7 @@
     font-family: Helvetica, Arial, sans-serif;
     color: #fff;
     font-weight: 500;
+    touch-action: manipulation;
 }
 
 body {
