@@ -60,3 +60,4 @@ function ChangeName(name, event){
     const clickedItem = event.currentTarget;
     clickedItem.firstChild.classList.add('focus');
 }
+gridItems[4].firstChild.classList.add('focus');
