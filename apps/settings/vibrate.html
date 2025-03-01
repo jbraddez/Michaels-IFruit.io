@@ -88,8 +88,10 @@
         const clickedItem = event.currentTarget;
         clickedItem.classList.add('focus');
         topName.innerText = name;
-        console.log(event.currentTarget)
         localStorage.setItem('vibration', name);
+        if(name == 'On'){
+            navigator.vibrate([200, 100, 300]);
+        }
     }
 
     const vibration = localStorage.getItem('vibration');
