@@ -109,22 +109,19 @@ const startButton = document.getElementById('start');
 const stopButton = document.getElementById('stop');
 const switchButton = document.getElementById('switch');
 let stream;
-let currentCamera = 'environment'; // Default to the back camera
+let currentCamera = 'environment';
 
-// Start the camera when the button is clicked
 startButton.addEventListener('click', () => {
     startCamera(currentCamera);
 });
 
-// Stop the camera when the button is clicked
 stopButton.addEventListener('click', () => {
     stopCamera();
 });
 
-// Switch camera between front and back
 switchButton.addEventListener('click', () => {
-    currentCamera = currentCamera === 'environment' ? 'user' : 'environment'; // Toggle between 'environment' and 'user'
-    restartCamera(); // Restart the camera with the new facing mode
+    currentCamera = currentCamera === 'environment' ? 'user' : 'environment'; 
+    restartCamera(); 
 });
 
 function startCamera(facingMode) {
@@ -135,6 +132,12 @@ function startCamera(facingMode) {
         stream = mediaStream;
         videoElement.srcObject = mediaStream;
         videoElement.play();
+
+        if (facingMode === 'user') {
+            videoElement.style.transform = 'scaleX(-1)'; 
+        } else {
+            videoElement.style.transform = ''; 
+        }
     })
     .catch((err) => {
         console.error('Error accessing the camera: ', err);
@@ -144,14 +147,14 @@ function startCamera(facingMode) {
 function stopCamera() {
     if (stream) {
         const tracks = stream.getTracks();
-        tracks.forEach((track) => track.stop()); // Stop all tracks to turn off the camera
+        tracks.forEach((track) => track.stop()); 
         videoElement.srcObject = null;
     }
 }
 
 function restartCamera() {
-    stopCamera(); // Stop the current camera
-    startCamera(currentCamera); // Start the new camera with the updated facingMode
+    stopCamera();
+    startCamera(currentCamera); 
 }
 
 
