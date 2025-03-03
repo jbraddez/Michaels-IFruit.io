@@ -1,0 +1,69 @@
+main{
+    background: #292f36;
+}
+
+.numgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    max-width: 600px;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.numgrid button{
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding: 20px;
+    text-align: center;
+    white-space: nowrap;
+    align-items: center;
+    border: 1px solid #000;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+button h2{
+    font-size: 3rem;
+}
+button p{
+    font-size: 2.5rem;
+}
+  
+.bottom{
+    position: relative;
+}
+
+button.focus{
+    background: #458ad5;
+    color: #fefefe;
+}
+
+@media screen and (max-width:768px){
+    button h2{
+        font-size: 2.5rem;
+    }
+    button p{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:480px){
+    button h2{
+        font-size: 2rem;
+    }
+    button p{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:320px){
+    button{
+        font-size: 1rem;
+    }
+}

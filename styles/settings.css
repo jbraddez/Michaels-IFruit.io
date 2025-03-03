@@ -71,6 +71,10 @@ main{
     padding: 3rem 0;
 }
 
+.numpad{
+    cursor: pointer;
+}
+
 button.numpad svg{
     fill: #459bcc;
     scale: 0.8;
@@ -79,3 +83,8 @@ button.numpad svg{
 button.call img{
     filter: brightness(0) saturate(100%) invert(53%) sepia(94%) saturate(2806%) hue-rotate(85deg) brightness(113%) contrast(92%);
 }
+
+button.call-blue img{
+    filter: brightness(0) saturate(100%) invert(63%) sepia(59%) saturate(1020%) hue-rotate(173deg) brightness(84%) contrast(88%);
+}
+

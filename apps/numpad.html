@@ -16,6 +16,7 @@
     <link rel="mask-icon" href="/images/ifruit.webp" color="#000000">
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/styles/settings.css">
+    <link rel="stylesheet" href="/styles/numpad.css">
 
     <meta property="og:title" content="Michael's IFruit">
     <meta property="og:description" content="A fanmade website of Michael De Santa's IFruit phone from GTAV story mode.">
@@ -28,11 +29,6 @@
 
     <link rel="apple-touch-startup-image" href="/wallpapers/1.jpg">
 
-    <style>
-        .focus img{
-            filter: none !important;
-        }
-    </style>
 </head>
 <body>
     <div class="top-sections">
@@ -52,31 +48,33 @@
                   </svg>
             </div>
         </header>
-    <h3 class="appnamecont">Contacts</h3>
+    <h3 class="appnamecont">Enter Number:</h3>
 </div>
 
 
     <main>
-        <button onclick="NextTarget(event)" class="subrow row">
-            <img src="/contacts/actingup.jpg" alt="Acting Up">
-            <h3>Acting Up</h3>
-        </button>
-        <button onclick="NextTarget(event)" class="subrow row">
-            <img src="/contacts/amanda.jpg" alt="Amanda">
-            <h3>Amanda</h3>
-        </button>
-        <button onclick="NextTarget(event)" class="subrow row">
-            <img src="/contacts/blimp.jpg" alt="Blimp">
-            <h3>Blimp</h3>
-        </button>
+        <div class="numgrid">
+            <button onclick="NextTarget(event)"><h2>1</h2></button>
+            <button onclick="NextTarget(event)"><h2>2</h2><p>ABC</p></button>
+            <button onclick="NextTarget(event)"><h2>3</h2><p>DEF</p></button>
+            <button onclick="NextTarget(event)"><h2>4</h2><p>GHI</p></button>
+            <button onclick="NextTarget(event)"><h2>5</h2><p>JKL</p></button>
+            <button onclick="NextTarget(event)"><h2>6</h2><p>MNO</p></button>
+            <button onclick="NextTarget(event)"><h2>7</h2><p>PQRS</p></button>
+            <button onclick="NextTarget(event)"><h2>8</h2><p>TUV</p></button>
+            <button onclick="NextTarget(event)"><h2>9</h2><p>WXYZ</p></button>
+            <button onclick="NextTarget(event)"><h2>*</h2></button>
+            <button onclick="NextTarget(event)"><h2>0</h2></button>
+            <button onclick="NextTarget(event)"><h2>#</h2></button>
+        </div>
     </main>
 
    
 
    <div class="bottom">
     <div class="select-options">
-        <button onclick="ToNumpad()" class="select numpad"><svg width="100" height="100" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="3.5"/><circle cx="15" cy="5" r="3.5"/><circle cx="25" cy="5" r="3.5"/><circle cx="5" cy="15" r="3.5"/><circle cx="15" cy="15" r="3.5"/><circle cx="25" cy="15" r="3.5"/><circle cx="5" cy="25" r="3.5"/><circle cx="15" cy="25" r="3.5"/><circle cx="25" cy="25" r="3.5"/></svg></button>
-        <button id="plus" class="select call"><img src="/images/call.png" alt="Call"></button>
+        <button class="select call-blue"><img src="/images/call.png" alt="Call"></button>
+        <button id="plus" class="select plus"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
         <button id="back" onclick="window.history.back();" class="select back"><img src="/images/backarrow.svg" alt="Back"></button>
     </div>
  
@@ -89,22 +87,35 @@
 
 
    <script>
-    const settings = document.querySelectorAll('.row');
+    const settings = document.querySelectorAll('.numgrid button');
+    const appnamecont = document.querySelector('.appnamecont');
+    const plus = document.getElementById('plus');
+
+    let enteredNumbers = "";
+    let lastSelectedNumber = null;
+
     function NextTarget(event) {
         settings.forEach(el => el.classList.remove('focus'));
         const clickedItem = event.currentTarget;
         clickedItem.classList.add('focus');
-        const img = clickedItem.querySelector('img');
-    }
-    settings[0].classList.add('focus');
 
-    const plus = document.getElementById('plus');
+        const number = clickedItem.querySelector('h2').textContent;
+        if (number !== "*") {
+            lastSelectedNumber = number; 
+        }
+    }
+
     plus.addEventListener('click', () => {
+        if (lastSelectedNumber && enteredNumbers.length < 14) {
+            if (enteredNumbers === "") {
+                appnamecont.textContent = lastSelectedNumber; 
+            } else {
+                appnamecont.textContent += lastSelectedNumber;
+            }
+            enteredNumbers += lastSelectedNumber;
+        }
     });
 
-    function ToNumpad(){
-        window.location.href = "/apps/numpad.html";
-    }
    </script>
     <script src="/scripts/script.js"></script>
 </body>
