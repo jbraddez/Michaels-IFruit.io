@@ -8,7 +8,13 @@ main{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    height: 100%; 
+    flex: 1;
+}
+
+.bottom{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 .row {
@@ -35,7 +41,7 @@ main{
     border-bottom: 2px solid rgba(55,55,55,0.3);
 }
 
-.row img {
+.row img, .row svg{
     max-height: 4rem;
 }
 
@@ -50,9 +56,26 @@ main{
 .row.focus{
     background-color: #458ad5;
 }
-.row.focus img{
+.row.focus img, .row.focus svg{
     filter: invert(1);
 }
 .row.focus h3{
     color: #fefefe;
+}
+
+.scrollable{
+    overflow-y: scroll !important;
+}
+
+.scrollable .row{
+    padding: 3rem 0;
+}
+
+button.numpad svg{
+    fill: #459bcc;
+    scale: 0.8;
+}
+
+button.call img{
+    filter: brightness(0) saturate(100%) invert(53%) sepia(94%) saturate(2806%) hue-rotate(85deg) brightness(113%) contrast(92%);
 }

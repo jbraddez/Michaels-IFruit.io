@@ -1,0 +1,21 @@
+.appnamecont{
+    background: linear-gradient(to bottom, #775f4d 49%, #462c17 51%);;
+}
+
+main{
+    background: #f2ecb2;
+    height: 100%;
+}
+
+.jobcont{
+    background: #a08876;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.jobcont div{
+    max-width: 600px;
+    width: 100%;
+}

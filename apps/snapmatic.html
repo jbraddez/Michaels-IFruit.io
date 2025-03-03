@@ -27,11 +27,17 @@
 
     <link rel="apple-touch-startup-image" href="/wallpapers/1.jpg">
     <style>
-        #camera{
-            height: 100%;
-            width: 100%;
+
+        .cameracont{
             background: #000;
-            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #camera{
+            max-width: 600px;
+            flex-grow: 1;
         }
         #start,#stop,#switch{
             background: none;
@@ -80,8 +86,9 @@
     </div>
 
 
+    <div class="cameracont">
         <video id="camera" autoplay playsinline></video>
-
+    </div>
    
 
    <div class="bottom">
@@ -157,6 +164,7 @@ function restartCamera() {
     startCamera(currentCamera); 
 }
 
+startCamera(currentCamera);
 
    </script>
     <script src="/scripts/script.js"></script>
