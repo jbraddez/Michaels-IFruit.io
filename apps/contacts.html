@@ -28,6 +28,11 @@
 
     <link rel="apple-touch-startup-image" href="/wallpapers/1.jpg">
 
+    <style>
+        .focus img{
+            filter: none !important;
+        }
+    </style>
 </head>
 <body>
     <div class="top-sections">
@@ -52,7 +57,18 @@
 
 
     <main>
-
+        <button onclick="NextTarget(event)" class="subrow row">
+            <img src="/contacts/actingup.jpg" alt="Acting Up">
+            <h3>Acting Up</h3>
+        </button>
+        <button onclick="NextTarget(event)" class="subrow row">
+            <img src="/contacts/amanda.jpg" alt="Amanda">
+            <h3>Amanda</h3>
+        </button>
+        <button onclick="NextTarget(event)" class="subrow row">
+            <img src="/contacts/blimp.jpg" alt="Blimp">
+            <h3>Blimp</h3>
+        </button>
     </main>
 
    
@@ -71,6 +87,25 @@
     </div>
    </div>
 
+
+   <script>
+    const settings = document.querySelectorAll('.row');
+    let appTarget = 'background';
+
+    function NextTarget(event) {
+        settings.forEach(el => el.classList.remove('focus'));
+        const clickedItem = event.currentTarget;
+        clickedItem.classList.add('focus');
+        const img = clickedItem.querySelector('img');
+        appTarget = img.alt.toLowerCase();
+    }
+    settings[0].classList.add('focus');
+
+    const plus = document.getElementById('plus');
+    plus.addEventListener('click', () => {
+            window.location.href = `/apps/settings/${appTarget}.html`;
+    });
+   </script>
     <script src="/scripts/script.js"></script>
 </body>
 </html>
