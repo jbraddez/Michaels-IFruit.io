@@ -1,0 +1,43 @@
+main{
+    background: linear-gradient(to top, #454449, #1b1c1c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+main img{
+    max-height: 70%;
+}
+.bottom{
+    position: relative;
+}
+
+.topcall{
+    background: linear-gradient(to top, #000000 48%, #242526 52%);
+    position: relative;
+}
+.topcall {
+    padding: 1rem;
+}
+
+.topcallcontent{
+    max-width: 600px;
+    margin: 0 auto;
+    height: fit-content;
+}
+
+.topcallcontent div{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0.5rem 0;
+}
+
+.topcallcontent img{
+    max-height: 7rem;
+    margin-right: 10px;
+}
+
+header{
+    border-bottom: 2px solid #484a4c;
+}

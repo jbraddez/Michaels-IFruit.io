@@ -198,3 +198,7 @@ header {
 .bottom-options img:nth-child(2){
     cursor: pointer;
 }
+
+.black{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(2%) saturate(3%) hue-rotate(335deg) brightness(102%) contrast(100%);
+}

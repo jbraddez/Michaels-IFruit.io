@@ -39,6 +39,7 @@
         .bottom{
             position: relative;
         }
+    
     </style>
 </head>
 <body>
@@ -153,16 +154,21 @@
 
    <script>
     const settings = document.querySelectorAll('.row');
+    let tocall = 'Acting Up'
     function NextTarget(event) {
         settings.forEach(el => el.classList.remove('focus'));
         const clickedItem = event.currentTarget;
         clickedItem.classList.add('focus');
         const img = clickedItem.querySelector('img');
+        tocall = img.alt;
+        sessionStorage.setItem('callername', tocall);
     }
     settings[0].classList.add('focus');
+    sessionStorage.setItem('callername', tocall);
 
     const plus = document.getElementById('plus');
     plus.addEventListener('click', () => {
+        window.location.href = "/apps/calling.html";
     });
 
     function ToNumpad(){

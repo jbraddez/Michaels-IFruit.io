@@ -15,6 +15,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/ifruit.webp">
     <link rel="mask-icon" href="/images/ifruit.webp" color="#000000">
     <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/styles/settings.css">
 
     <meta property="og:title" content="Michael's IFruit">
     <meta property="og:description" content="A fanmade website of Michael De Santa's IFruit phone from GTAV story mode.">
@@ -27,20 +28,7 @@
 
     <link rel="apple-touch-startup-image" href="/wallpapers/1.jpg">
 
-    <link rel="stylesheet" href="/styles/settings.css">
-    <style>
-         .focus img{
-            filter: none !important;
-        }
-        main{
-            overflow-y: scroll;
-            height: 100%;
-        }
-        .bottom{
-            position: relative;
-        }
-    
-    </style>
+    <link rel="stylesheet" href="/styles/calling.css">
 </head>
 <body>
     <div class="top-sections">
@@ -60,74 +48,66 @@
                   </svg>
             </div>
         </header>
-    <h3 class="appnamecont">Background</h3>
     </div>
 
+    <div class="topcall">
+        <div class="topcallcontent">
+            <h2 id="name">Amanda</h2>
+            <div>
+                <img id="image" src="/contacts/amanda.jpg" alt="character name">
+                <h1 id="dialtext">DIALING...</h1>
+            </div>
+        </div>
+    </div>
 
     <main>
-        <div class="content scrollable">
-            <button onclick="NextTarget(event)" class="subrow row endofrows">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#000"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-                <h3>To Be Added</h3>
-            </button>
-            <button onclick="NextTarget(event)" class="subrow row endofrows">
-                <img src="/images/theme.png" alt="T.B.A">
-                <h3>To Be Added</h3>
-            </button>
-            <button onclick="NextTarget(event)" class="subrow row endofrows">
-                <img src="/images/theme.png" alt="T.B.A">
-                <h3>To Be Added</h3>
-            </button>
-            <button onclick="NextTarget(event)" class="subrow row endofrows">
-                <img src="/images/theme.png" alt="T.B.A">
-                <h3>To Be Added</h3>
-            </button>
-            <button onclick="NextTarget(event)" class="subrow row endofrows">
-                <img src="/images/theme.png" alt="T.B.A">
-                <h3>To Be Added</h3>
-            </button>
-            <button onclick="NextTarget(event)" class="subrow row endofrows">
-                <img src="/images/theme.png" alt="T.B.A">
-                <h3>To Be Added</h3>
-            </button>
-            <button onclick="NextTarget(event)" class="subrow row endofrows">
-                <img src="/images/theme.png" alt="T.B.A">
-                <h3>To Be Added</h3>
-            </button>
-            <button onclick="NextTarget(event)" class="subrow row endofrows">
-                <img src="/images/theme.png" alt="T.B.A">
-                <h3>To Be Added</h3>
-            </button>
-
-        </div>
+       <img src="/images/ifruit.webp" class="black" alt="IFruit Logo">
     </main>
 
    
 
    <div class="bottom">
     <div class="select-options">
+        <button  class="select"></button>
         <button class="select"></button>
-        <button id="plus" class="select plus"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
-        <button onclick="window.history.back();" class="select back"><img src="/images/backarrow.svg" alt="Back"></button>
+        <button id="back" onclick="window.history.back();" class="select call-end"><img src="/images/call.png" alt="End call"></button>
     </div>
  
     <div class="bottom-options">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
         <img src="/images/ifruit.webp" alt="IFruit logo">
-        <img id="back" src="/images/bottomback.svg" alt="Back Arrow">
+        <img src="/images/bottomback.svg" alt="Back Arrow">
     </div>
    </div>
 
-   <script>
-    const settings = document.querySelectorAll('.row');
-    function NextTarget(event) {
-        settings.forEach(el => el.classList.remove('focus'));
-        const clickedItem = event.currentTarget;
-        clickedItem.classList.add('focus');
-        const img = clickedItem.querySelector('img');
-    }
 
-    settings[0].classList.add('focus');
+   <script>
+    let tocall = sessionStorage.getItem('callername');
+    const image = document.getElementById('image');
+    const name = document.getElementById('name');
+    name.textContent = tocall;
+    const tocallFormatted = tocall.toLowerCase().replace(/\./g, '').replace(/ /g, '');
+    const img = new Image();
+    img.src = `/contacts/${tocallFormatted}.jpg`;
+
+    img.onerror = () => {
+        img.src = `/contacts/${tocallFormatted}.png`;
+    };
+    image.src = img.src;
+    image.alt = tocall;
+
+    //calling sound
+    const audio = new Audio('/contacts/calling.mp3');
+    audio.playbackRate = 1.25;
+    audio.play();
+
+    audio.addEventListener('ended', () => {
+        document.getElementById('dialtext').textContent = 'BUSY';
+        setTimeout(() => {
+            window.history.back();
+        }, 2000);
+    });
+
    </script>
     <script src="/scripts/script.js"></script>
 </body>

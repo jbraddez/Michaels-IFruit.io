@@ -88,4 +88,11 @@ button.call-blue img{
     filter: brightness(0) saturate(100%) invert(63%) sepia(59%) saturate(1020%) hue-rotate(173deg) brightness(84%) contrast(88%);
 }
 
+button.call-end img{
+    filter: brightness(0) saturate(100%) invert(11%) sepia(99%) saturate(7104%) hue-rotate(1deg) brightness(93%) contrast(87%);
+    rotate: 135deg;
+}
 
+button.call-end{
+    cursor: pointer;
+}
