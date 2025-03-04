@@ -89,10 +89,6 @@
     const tocallFormatted = tocall.toLowerCase().replace(/\./g, '').replace(/ /g, '');
     const img = new Image();
     img.src = `/contacts/${tocallFormatted}.jpg`;
-
-    img.onerror = () => {
-        img.src = `/contacts/${tocallFormatted}.png`;
-    };
     image.src = img.src;
     image.alt = tocall;
 
