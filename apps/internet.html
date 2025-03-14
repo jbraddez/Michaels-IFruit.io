@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFruit - Michael De Santa</title>
-    <link rel="stylesheet" href="/style.css">
     <link rel="website icon" href="./images/ifruit.webp">
     <meta name="theme-color" content="#000000">
     <meta name="mobile-web-app-capable" content="yes">
@@ -26,49 +25,124 @@
     <link rel="icon" sizes="512x512" href="/images/ifruit.webp">
 
     <link rel="apple-touch-startup-image" href="/wallpapers/1.jpg">
-
+    <link rel="stylesheet" href="/styles/internet.css">
+    <meta name="screen-orientation" content="landscape">
 </head>
 <body>
-    <div class="top-sections">
-        <header>
-            <div class="info">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-160v-240h120v240H200Zm240 0v-440h120v440H440Zm240 0v-640h120v640H680Z"/></svg>
-                <img src="/images/infoimg.png" alt="ISP logo (Internet Service Provider Logo)">
-                <p id="day"></p>
-            </div>
-            <p id="time">00:00</p>
-            <div class="righthead">
-                <img class="sleep" src="/images/sleep.png" alt="Sleep Mode">
-                <svg id="battery" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 200 150">
-                    <rect id="batteryOutline" x="10" y="35" width="180" height="80"/>
-                    <rect x="190" y="55" width="10" height="40" id="batteryCharger"/>
-                    <rect id="batteryFill" x="15" y="40" width="0" height="70"/>
-                  </svg>
-            </div>
-        </header>
-    </div>
 
 
     <main>
-        
+        <div class="top"><p>--- EYEFIND... It's like a series of tubes ---</p></div>
+        <div class="navigation">
+            <div class="content">
+                <div class="back-forward">
+                    <button>
+                        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="70,20 20,50 70,80" />
+                          </svg>                                           
+                    </button>
+                    <button>
+                        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="30,20 80,50 30,80"/>
+                          </svg>                                  
+                    </button>
+                </div>
+                <button class="home"><img src="/images/home.png" alt="Home"></button>
+                <button class="history">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+                    <svg class="dropdown" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-360 280-560h400L480-360Z"/></svg>
+                </button>
+                <div class="search">
+                    <input id="url-box" type="text" placeholder="www.eyefind.info">
+                    <button class="x"></button>
+                </div>
+            </div>
+        </div>
+        <div class="info-cont">
+            <div class="content">
+                <div class="row1">
+                    <img src="/images/eyefind.webp" alt="Eyefind logo">
+                    <div class="user-info">
+                        <div class="location-day">
+                            <p id="location">Los Santos</p>
+                            <p id="day">Mon</p>
+                        </div>
+                        <img id="weatherImage" src="/weather/clear.png" alt="Weather Image" width="300">
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="search-container">
+                        <img src="/images/search.png" alt="Search Icon" class="search-icon">
+                        <input id="search-box" type="text" placeholder="Search Eyefind">
+                    </div>
+                    <button id="random">RANDOM</button>
+                </div>
+            </div>
+        </div>
+        <hr class="yellowband">
+        <div class="groups">
+            <div class="content">
+
+
+                
+            </div>
+        </div>
     </main>
 
    
+    <script>
+        async function getWeather() {
+            try {
+                const response = await fetch("https://wttr.in/?format=%C"); 
+                const weatherCondition = await response.text();
+                updateImage(weatherCondition.trim().toLowerCase());
+            } catch (error) {
+                console.error("Error fetching weather:", error);
+            }
+        }
 
-   <div class="bottom">
-    <div class="select-options">
-        <button class="select"></button>
-        <button id="plus" class="select plus"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
-        <button id="back" onclick="window.history.back();" class="select back"><img src="/images/backarrow.svg" alt="Back"></button>
-    </div>
- 
-    <div class="bottom-options">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
-        <img src="/images/ifruit.webp" alt="IFruit logo">
-        <img src="/images/bottomback.svg" alt="Back Arrow">
-    </div>
-   </div>
+        function updateImage(condition) {
+            const img = document.getElementById("weatherImage");
+            
+            const weatherImages = {
+                "clear": "clear.png",
+                "cloudy": "cloudy.png",
+                "rain": "rain.png",
+                "snow": "snow.png"
+            };
 
-    <script src="/scripts/script.js"></script>
+            img.src = weatherImages[condition] ? "/weather/" + weatherImages[condition] : "/weather/clear.png";
+        }
+
+        getWeather();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@bigdatacloud/js-reverse-geocode-client"></script>
+    <script>
+        const locationEl = document.getElementById("location");
+        const dayEl = document.getElementById("day");
+
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const { latitude, longitude } = position.coords;
+                fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
+                    .then(response => response.json())
+                    .then(data => {
+                        locationEl.textContent = data.locality || "Los Santos";
+                    })
+                    .catch(error => {
+                        console.error("Error fetching city:", error);
+                        locationEl.textContent = "Los Santos";
+                    });
+
+            }, error => {
+                console.error("Geolocation error:", error);
+                locationEl.textContent = "Los Santos";
+            });
+        } else {
+            locationEl.textContent = "Los Santos";
+        }
+    </script>
+
 </body>
 </html>
