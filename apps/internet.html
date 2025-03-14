@@ -84,12 +84,23 @@
             <div class="content">
 
 
-                
+
             </div>
         </div>
     </main>
 
-   
+
+    
+    <script>
+        const dayEl = document.getElementById("day");
+        function getDay(){
+            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            const today = new Date();
+            const dayName = days[today.getDay()];
+            dayEl.textContent = dayName;
+        }
+        getDay();
+    </script>
     <script>
         async function getWeather() {
             try {
@@ -120,7 +131,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@bigdatacloud/js-reverse-geocode-client"></script>
     <script>
         const locationEl = document.getElementById("location");
-        const dayEl = document.getElementById("day");
 
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(position => {
