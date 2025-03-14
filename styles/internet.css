@@ -126,6 +126,7 @@ input:focus,input:active{
     aspect-ratio: 5/4;
     border-radius: 0 0.6rem 0.6rem 0;
     height: 2rem;
+    border: 2px solid #a8a8ad;
     border-left: none;
     scale: 1 !important;
 }
