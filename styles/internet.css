@@ -81,6 +81,7 @@ button img, button svg{
     align-items: center;
     justify-content: center;
     border-radius: 0;
+    max-width: 3rem;
 }
 
 .back-forward button:first-child{
@@ -166,7 +167,8 @@ input:focus,input:active{
 }
 
 .row1 img{
-    height: 100%;
+    max-width: 40%;
+    max-height: 100%;
 }
 
 .user-info{
@@ -204,16 +206,18 @@ input:focus,input:active{
     align-items: center;
     justify-content: space-between;
     height:3rem;
+    margin: 0.2rem;
     margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
 }
 
 #random{
     height: 85%;
+    max-width: 30%;
     padding: 0 3rem;
     font-size: 1.5rem;
     color: #fefefe;
     border-radius: 0.4rem;
+    margin-right: 0.5rem;
     background: #0a82a4;
     outline: none !important;
     border: 1px solid #2d90c1;
