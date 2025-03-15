@@ -263,6 +263,146 @@ input:focus,input:active{
 }
 
 
+
+/* categories */
+
+.groups .group{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    flex: 1;
+    border-right: 2px solid #d7d7d7;
+    height: 100%;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.groups{
+    height: 4rem;
+    background: #e7e7e7;
+    border-bottom: 2px solid #d7d7d7;
+}
+
+.group p{
+    flex: 1;
+}
+
+.groups .group:last-child{
+    border: none;
+}
+
+.groups .content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.group .icon{
+    filter: brightness(0) saturate(100%) invert(65%) sepia(12%) saturate(2120%) hue-rotate(170deg) brightness(88%) contrast(95%);
+    height: 90%;
+}
+
+.newline{
+    display: block;
+}
+
+@media screen and (max-width: 768px){
+    .groups .group{
+        font-size: 0.5rem;
+    }
+
+    .group .icon{
+        display: none;
+    }
+}
+
+/* main content */
+
+.maincontent{
+    padding-top: 2rem;
+    background: #f0f0f0;
+}
+
+.mainsplit{
+    display: flex;
+}
+h2{
+    font-weight: 400;
+}
+.news-wotm{
+    width: 66%;
+    margin-right: 1rem;
+}
+
+.news,.wotm,.bleets{
+    background: #e7e7e7;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.news h2,.wotm h2{
+    color: #666666;
+}
+.news{
+    position: relative;
+}
+.news img{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 30%;
+}
+
+.storyname{
+    margin: 2rem 0;
+    font-size: 1.1rem;
+}
+
+.story{
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+
+.ad-bleets{
+    width: 33%;
+}
+
+.bleets img{
+    width: 3rem;
+    margin-right: 1rem;
+}
+
+.bleets .row:first-child{
+    display: flex;
+    align-items: center;
+}
+
+.ad{
+    background: #59a4df;
+    padding: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.ad p{
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.ad img{
+    width: 100%;
+}
+
+
+
 /* cursors */
 body{
     cursor: url('/cursors/default.png'), url('/cursors/default.cur'), default;
