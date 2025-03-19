@@ -47,7 +47,7 @@
                           </svg>                                  
                     </button>
                 </div>
-                <button class="home"><img src="/images/home.png" alt="Home"></button>
+                <button onclick="window.location.href='/apps/internet.html'" class="home"><img src="/images/home.png" alt="Home"></button>
                 <button class="history">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
                     <svg class="dropdown" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-360 280-560h400L480-360Z"/></svg>
@@ -111,12 +111,14 @@
                 <div class="mainsplit">
                     <div class="news-wotm">
                         <div class="news mainbox">
-                            <h2>NEWS STORY OF THE DAY</h2>
-                            <p id="homestoryname" class="storyname">Royal reefer.</p>
-                            <p id="homestory" class="story">Gavin McTavern - WNKA International <span class="newline">Minor royal Princess Georgina has fallen victim to yet another media sting operation on her latest visit to the USA. The party-loving young royal, believing wholeheartedly that she was on a tour of impoverished inner city Los Santos</span></p>
+                            <h2 id="newsstoryoftheday">NEWS STORY OF THE DAY</h2>
+                            <span id="opennews">
+                                <img src="/internet/WNKA.webp" alt="WNKA International logo">
+                                <p id="homestoryname" class="storyname">Royal reefer.</p>
+                            </span>
+                            <p id="homestory" class="story">Gavin McTavern - WNKA International <span class="newline">Minor royal Princess Georgina has fallen victim to yet another media sting operation on her latest visit to the USA. The party-loving young royal, believing wholeheartedly that she was on a tour of impoverished inner city Los Santos neighborhoods, was lured into a trap by unscrupulous paparazzi to make it look like she was buying marijuana from a drug dealer. Princess Georgina is said to be devastated and embarrassed that she allowed herself to be taken advantage of so naively. Maybe if the Americans had their own royal family instead of worshiping pathetic celebrities, they might show some semblance of class, morality and common decency.</span></p>
                         
-                            <p class="clickable">READ FULL ARTICLE</p><!--onclick to news page or whatever happens in game-->
-                            <img src="/internet/WNKA.webp" alt="WNKA International logo">
+                            <p onclick="showArticle()" id="readfullarticle" class="clickable">READ FULL ARTICLE</p><!--onclick to news page or whatever happens in game-->
                         </div>
                         <div class="wotm mainbox">
                             <h2>WEBSITE OF THE MINUTE</h2>
@@ -132,7 +134,7 @@
                     <div class="ad-bleets">
                         <div class="ad clickable"><!--link to legendary motorsports page-->
                             <p>Sponsored Advert</p>
-                            <img src="/internet/legendary-motorsport.jpg" alt="Legendary Motorsport advert">
+                            <img id="ad-img" src="/internet/legendary-motorsport.jpg" alt="Legendary Motorsport advert">
                         </div>
                         <div class="bleets mainbox">
                             <div class="row">
@@ -140,13 +142,13 @@
                                 <h2>RECENT BLEETS</h2>
                             </div>
                             <div class="row">
-                                <p class="user">@zachdealba</p>
-                                <p class="bleet">Me, some bubble wrap, a bottle of rum. I'd say I got myself a party.</p>
+                                <p id="user1" class="user">@zachdealba</p>
+                                <p id="bleet1" class="bleet">Me, some bubble wrap, a bottle of rum. I'd say I got myself a party.</p>
                             </div>
                             <hr class="bleetshr">
                             <div class="row">
-                                <p class="user">@sophiephair</p>
-                                <p class="bleet">I'm starting to think spending $30,000 on a liberal arts degree was a mistake</p>
+                                <p id="user2" class="user">@sophiephair</p>
+                                <p id="bleet2" class="bleet">I'm starting to think spending $30,000 on a liberal arts degree was a mistake</p>
                             </div>
                         </div>
                     </div>
@@ -176,44 +178,8 @@
     </main>
 
 
-    
-    <script>
-        const dayEl = document.getElementById("day");
-        function getDay(){
-            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-            const today = new Date();
-            const dayName = days[today.getDay()];
-            dayEl.textContent = dayName;
-        }
-        getDay();
-    </script>
-    <script>
-        async function getWeather() {
-            try {
-                const response = await fetch("https://wttr.in/?format=%C"); 
-                const weatherCondition = await response.text();
-                updateImage(weatherCondition.trim().toLowerCase());
-            } catch (error) {
-                console.error("Error fetching weather:", error);
-            }
-        }
-
-        function updateImage(condition) {
-            const img = document.getElementById("weatherImage");
-            
-            const weatherImages = {
-                "clear": "clear.png",
-                "cloudy": "cloudy.png",
-                "rain": "rain.png",
-                "snow": "snow.png"
-            };
-
-            img.src = weatherImages[condition] ? "/weather/" + weatherImages[condition] : "/weather/clear.png";
-        }
-
-        getWeather();
-    </script>
-
+    <script src="/scripts/internet.js"></script>
+    <script src="/internet/bleets.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@bigdatacloud/js-reverse-geocode-client"></script>
     <script>
         const locationEl = document.getElementById("location");

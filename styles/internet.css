@@ -255,6 +255,7 @@ input:focus,input:active{
 
 .content{
     max-width: 1000px;
+    padding: 0 0.2rem;
     margin: 0 auto;
 }
 
@@ -307,17 +308,6 @@ input:focus,input:active{
 .newline{
     display: block;
 }
-
-@media screen and (max-width: 768px){
-    .groups .group{
-        font-size: 0.5rem;
-    }
-
-    .group .icon{
-        display: none;
-    }
-}
-
 /* main content */
 
 .maincontent{
@@ -346,6 +336,7 @@ h2{
 .mainbox h2,.wotm .desc,.bleet{
     color: #666666;
 }
+
 .news{
     position: relative;
 }
@@ -366,7 +357,35 @@ h2{
     font-size: 1.1rem;
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    height: 4lh;
 }
+
+.news.fullopen{
+    background: transparent;
+}
+
+
+#opennews{
+    display: flex;
+}
+
+.news.fullopen .storyname{
+    margin: 1rem 0;
+}
+
+.news.fullopen img{
+    position: relative;
+    margin-left: 1rem;
+    width: 40%;
+    display: block !important;
+}
+.news.fullopen .story{
+    height: fit-content;
+    mask-image: none;
+    margin-top: 2rem;
+    -webkit-mask-image: none;
+}
+
 
 .wotm .row{
     display: flex;
@@ -461,6 +480,105 @@ h2{
     object-fit: cover;
 }
 
+
+
+@media screen and (max-width: 768px){
+    .groups .group{
+        font-size: 0.4rem;
+    }
+
+    .group .icon{
+        max-width: 20%;
+        height: auto;
+    }
+
+    .mainsplit{
+        flex-direction: column-reverse;
+    }
+    
+    .mainsplit .ad-bleets{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .ad{
+        height: fit-content;
+        max-width: 50%;
+        margin-right: 0.5rem;
+    }
+
+    .news-wotm{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 462px){
+    .groups .group p{
+        display: none;
+    }
+    .groups .group{
+        justify-content: center;
+    }
+
+    .group .icon{
+        max-width: none;
+        height: 70%;
+    }
+
+    .mainsplit .ad-bleets{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ad{
+        max-width: none;
+    }
+
+    #opennews img{
+        margin-top: 2rem;
+    } 
+
+    #wotmlink{
+        font-size: 0.8rem;
+    }
+
+    .wotm .row{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .wotm .row img{
+        margin: 0 0 0.5rem 0.8rem;
+    }
+
+    .top{
+        font-size: 0.7rem;
+    }
+
+    #random{
+        font-size: 1.2rem;
+    }
+
+    .sitesrow img{
+        height: 4rem;
+        width: auto;
+    }
+
+    .sitesrow{
+        overflow-x: scroll;
+    }
+}
+
+/* hide scrollbar */
+body *::-webkit-scrollbar {
+    display: none;
+}
+  
+body * {
+    scrollbar-width: none;
+}
+  
 
 /* cursors */
 body{
