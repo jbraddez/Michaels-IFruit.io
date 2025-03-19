@@ -118,7 +118,7 @@
                             </span>
                             <p id="homestory" class="story">Gavin McTavern - WNKA International <span class="newline">Minor royal Princess Georgina has fallen victim to yet another media sting operation on her latest visit to the USA. The party-loving young royal, believing wholeheartedly that she was on a tour of impoverished inner city Los Santos neighborhoods, was lured into a trap by unscrupulous paparazzi to make it look like she was buying marijuana from a drug dealer. Princess Georgina is said to be devastated and embarrassed that she allowed herself to be taken advantage of so naively. Maybe if the Americans had their own royal family instead of worshiping pathetic celebrities, they might show some semblance of class, morality and common decency.</span></p>
                         
-                            <p onclick="showArticle()" id="readfullarticle" class="clickable">READ FULL ARTICLE</p><!--onclick to news page or whatever happens in game-->
+                            <p onclick="showArticle()" id="readfullarticle" class="clickable">READ FULL ARTICLE</p>
                         </div>
                         <div class="wotm mainbox">
                             <h2>WEBSITE OF THE MINUTE</h2>
@@ -182,28 +182,54 @@
     <script src="/internet/bleets.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@bigdatacloud/js-reverse-geocode-client"></script>
     <script>
-        const locationEl = document.getElementById("location");
+       const locationEl = document.getElementById("location");
 
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(position => {
-                const { latitude, longitude } = position.coords;
-                fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
-                    .then(response => response.json())
-                    .then(data => {
-                        locationEl.textContent = data.locality || "Los Santos";
-                    })
-                    .catch(error => {
-                        console.error("Error fetching city:", error);
-                        locationEl.textContent = "Los Santos";
-                    });
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(position => {
+        const { latitude, longitude } = position.coords;
+        localStorage.setItem("geoPermission", "granted"); // Store permission
+        localStorage.setItem("latitude", latitude);
+        localStorage.setItem("longitude", longitude);
 
-            }, error => {
-                console.error("Geolocation error:", error);
+        fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
+            .then(response => response.json())
+            .then(data => {
+                locationEl.textContent = data.locality || "Los Santos";
+            })
+            .catch(error => {
+                console.error("Error fetching city:", error);
                 locationEl.textContent = "Los Santos";
             });
-        } else {
-            locationEl.textContent = "Los Santos";
-        }
+
+    }, error => {
+        console.error("Geolocation error:", error);
+        localStorage.setItem("geoPermission", "denied"); // Store denial
+        locationEl.textContent = "Los Santos";
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const permission = localStorage.getItem("geoPermission");
+
+    if (permission === "granted") {
+        const latitude = localStorage.getItem("latitude");
+        const longitude = localStorage.getItem("longitude");
+
+        fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
+            .then(response => response.json())
+            .then(data => {
+                locationEl.textContent = data.locality || "Los Santos";
+            })
+            .catch(error => {
+                console.error("Error fetching city:", error);
+                locationEl.textContent = "Los Santos";
+            });
+
+    } else if (permission !== "denied") {
+        getLocation();
+    }
+});
+
     </script>
 
 </body>

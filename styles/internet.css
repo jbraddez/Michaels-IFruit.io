@@ -360,6 +360,7 @@ h2{
     height: 4lh;
 }
 
+
 .news.fullopen{
     background: transparent;
 }
@@ -586,5 +587,10 @@ body{
 }
 a, button, .search-icon, .clickable{
     cursor: url('/cursors/pointer.png'), url('/cursors/pointer.cur'), pointer;
+}
+
+.clickable{
+    position: relative;
+  z-index: 10;
 }
 
