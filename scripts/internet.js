@@ -35,6 +35,7 @@ function updateImage(condition) {
 getWeather();
 
 //show article
+var backURL = "";
 const urlbox = document.getElementById('url-box');
 function showArticle(){
     const news = document.querySelector('.news');
@@ -49,7 +50,10 @@ function showArticle(){
     featured_sites.style.display = 'none';
     wotm.style.display = 'none';
     news_title.style.display = 'none';
+    backURL = "/apps/internet.html";
+    document.querySelector('.backbtn').classList.add('active');
 }
+
 
 
 
@@ -76,15 +80,18 @@ loadRandomStory();
 
 //sponsored ad
 // -- - -- - -- -- -- --- -- -- -- - --  NEED TO ADD LINK ONCLICK WHEN PAGES MADE
-const ads = [['/internet/legendary-motorsport.jpg', 'Legendary Motorsport'],['/internet/elitastravel.png', 'Elitas Travel']]
+const ads = [['/legendary-motorsport.jpg', 'Legendary Motorsport'],
+['/elitastravel.png', 'Elitas Travel'],
+['/docktease.png', 'Dock Tease']]
 function loadAd(){
     const adImage = document.getElementById('ad-img');
 
     const randomIndex = Math.floor(Math.random() * ads.length);
     const ad = ads[randomIndex];
-    adImage.src = ad[0];
+    adImage.src = "/internet" + ad[0];
     adImage.alt = ad[1];
 }
 
 loadAd();
+
 

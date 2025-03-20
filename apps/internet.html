@@ -36,12 +36,12 @@
         <div class="navigation">
             <div class="content">
                 <div class="back-forward">
-                    <button>
+                    <button class="backbtn" onclick="backPage()">
                         <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <polygon points="70,20 20,50 70,80" />
                           </svg>                                           
                     </button>
-                    <button>
+                    <button id="fwdbtn">
                         <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <polygon points="30,20 80,50 30,80"/>
                           </svg>                                  
@@ -65,6 +65,9 @@
                     <div class="user-info">
                         <div class="location-day">
                             <p id="location">Los Santos</p>
+                            <script>
+                                document.getElementById('location').textContent = sessionStorage.getItem("recentLocation") || "Los Santos";
+                            </script>
                             <p id="day">Mon</p>
                         </div>
                         <img id="weatherImage" src="/weather/clear.png" alt="Weather Image" width="300">
@@ -82,23 +85,23 @@
         <hr class="yellowband">
         <div class="groups">
             <div class="content">
-                <a href="" class="group">
+                <a onclick="SearchGroup('mae')" class="group">
                     <img src="/internet/media_entertainment.png" alt="MEDIA AND ENTERTAINMENT" class="icon">
                     <p>MEDIA AND <span class="newline">ENTERTAINMENT</span></p>
                 </a>
-                <a href="" class="group">
+                <a onclick="SearchGroup('fad')" class="group">
                     <img src="/internet/food_drink.png" alt="FOOD AND DRINK" class="icon">
                     <p>FOOD <span class="newline">AND DRINK</span></p>
                 </a>
-                <a href="" class="group">
+                <a onclick="SearchGroup('mas')"class="group">
                     <img src="/internet/money_services.png" alt="MONEY AND SERVICES" class="icon">
                     <p>MONEY <span class="newline">AND SERVICES</span></p>
                 </a>
-                <a href="" class="group">
+                <a onclick="SearchGroup('tat')" class="group">
                     <img src="/internet/travel_transport.png" alt="TRAVEL AND TRANSPORT" class="icon">
                     <p>TRAVEL <span class="newline">AND TRANSPORT</span></p>
                 </a>
-                <a href="" class="group">
+                <a onclick="SearchGroup('fah')" class="group">
                     <img src="/internet/fashion_health.png" alt="FASHION AND HEALTH" class="icon">
                     <p>FASHION <span class="newline">AND HEALTH</span></p>
                 </a>
@@ -175,11 +178,52 @@
                 </div>
             </div>
         </div>
+
+
+        <div id="results-sec" class="results">
+            <div class="content">
+                <p class="resultsforparent">Results for: <span id="resultsfor"></span></p>
+                <!--  <div class="result-row">
+                    <div class="url-desc">
+                        <p id="url"></p>
+                        <p class="desc"></p>
+                    </div>
+                </div>-->
+            </div>
+        </div>
     </main>
 
 
+    <script src="/internet/pages.js"></script><!--search categ. -->
     <script src="/scripts/internet.js"></script>
     <script src="/internet/bleets.js"></script>
+    <script>
+        const lastPage = sessionStorage.getItem('lastpage');
+        if(lastPage == 'mae'){
+            SearchGroup('mae');
+        }else if(lastPage == 'fad'){
+            SearchGroup('fad');
+        }else if(lastPage == 'mas'){
+            SearchGroup('mas');
+        }else if(lastPage == 'tat'){
+            SearchGroup('tat')
+        }else if(lastPage == 'fah'){
+            SearchGroup('fah')
+        }
+
+
+        sessionStorage.setItem('lastPage', 'home');
+
+
+        //back button
+        function backPage(){
+            if (backURL) {
+                window.location.href = backURL;
+            } else {
+                window.history.back();
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@bigdatacloud/js-reverse-geocode-client"></script>
     <script>
        const locationEl = document.getElementById("location");
@@ -187,7 +231,7 @@
 function getLocation() {
     navigator.geolocation.getCurrentPosition(position => {
         const { latitude, longitude } = position.coords;
-        localStorage.setItem("geoPermission", "granted"); // Store permission
+        localStorage.setItem("geoPermission", "granted");
         localStorage.setItem("latitude", latitude);
         localStorage.setItem("longitude", longitude);
 
@@ -195,6 +239,7 @@ function getLocation() {
             .then(response => response.json())
             .then(data => {
                 locationEl.textContent = data.locality || "Los Santos";
+                sessionStorage.setItem("recentLocation", data.locality || "Los Santos");
             })
             .catch(error => {
                 console.error("Error fetching city:", error);
@@ -203,7 +248,7 @@ function getLocation() {
 
     }, error => {
         console.error("Geolocation error:", error);
-        localStorage.setItem("geoPermission", "denied"); // Store denial
+        localStorage.setItem("geoPermission", "denied"); 
         locationEl.textContent = "Los Santos";
     });
 }
@@ -232,5 +277,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     </script>
 
+    <script src="/internet/buttons.js"></script>
 </body>
 </html>
