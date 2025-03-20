@@ -80,9 +80,9 @@ loadRandomStory();
 
 //sponsored ad
 // -- - -- - -- -- -- --- -- -- -- - --  NEED TO ADD LINK ONCLICK WHEN PAGES MADE
-const ads = [['/legendary-motorsport.jpg', 'Legendary Motorsport'],
-['/elitastravel.png', 'Elitas Travel'],
-['/docktease.png', 'Dock Tease']]
+const ads = [['/legendary-motorsportad.jpg', 'Legendary Motorsport'],
+['/elitastravelad.png', 'Elitas Travel'],
+['/dockteasead.png', 'Dock Tease']]
 function loadAd(){
     const adImage = document.getElementById('ad-img');
 

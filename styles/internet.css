@@ -507,11 +507,13 @@ h2{
     display: flex;
     margin-bottom: 1rem;
     height: 6rem;
-    padding: 0.5rem;
+    padding: 0.1rem;
     text-decoration: none;
+    border: 0.2rem solid rgba(0, 0, 0, 0);
 }
 
 .result-row img{
+    height: 100%;
     max-width: 30%;
 }
 
@@ -520,8 +522,22 @@ h2{
 
 }
 
+.desc{
+    max-height: 3lh;
+    overflow: scroll;
+    text-overflow: ellipsis;
+}
+
 .url{
     margin-bottom: 1rem;
+}
+
+.result-row:hover{
+    border: 0.2rem solid #59a4df;
+}
+
+.result-row:hover .url{
+    color: #2d90c1;
 }
 
 
@@ -529,7 +545,12 @@ h2{
     .groups .group{
         font-size: 0.4rem;
     }
-
+    .result-row:hover .url{
+        color: unset;
+    }
+    .result-row{
+        border: none !important;
+    }
     .group .icon{
         max-width: 20%;
         height: auto;
@@ -573,7 +594,7 @@ h2{
         margin-left: 0.5rem;
     }
     .url{
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.2rem;
     }
     .url-desc .desc{
         font-size: 0.8rem;
