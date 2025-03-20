@@ -511,9 +511,13 @@ h2{
     text-decoration: none;
 }
 
+.result-row img{
+    max-width: 30%;
+}
 
 .url-desc{
     margin-left: 1rem;
+
 }
 
 .url{
@@ -553,6 +557,16 @@ h2{
 }
 
 @media screen and (max-width: 462px){
+    .result-row{
+        height: fit-content;
+    }
+    .result-row img{
+        height: fit-content;
+    }
+    .url-desc{
+        font-size: 1rem;
+        margin-left: 0.5rem;
+    }
     .groups .group p{
         display: none;
     }
