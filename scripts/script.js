@@ -4,6 +4,8 @@ const today = new Date();
 const dayName = days[today.getDay()];
 document.getElementById("day").innerText = dayName;
 
+sessionStorage.setItem('lastpage', 'home');
+
 //time
 const timeEl = document.getElementById("time");
 function updateTime() {

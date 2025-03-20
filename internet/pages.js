@@ -56,6 +56,7 @@ function SearchGroup(category){
     resultseccont.innerHTML="";
     maincontent.style.display = 'none';
     resultsec.style.display = 'block';
+    backURL = '/apps/internet.html';
     if (category == 'mae'){
         sessionStorage.setItem('lastpage', 'mae');
         resultsfor.textContent = 'MEDIA AND ENTERTAINMENT';

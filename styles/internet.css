@@ -233,6 +233,10 @@ input:focus,input:active{
     border: 1px solid #2d90c1;
 }
 
+#random:hover{
+    background: #3296b3;
+}
+
 .search-container {
     position: relative;
     flex: 1;
@@ -294,6 +298,10 @@ input:focus,input:active{
     height: 4rem;
     background: #e7e7e7;
     border-bottom: 2px solid #d7d7d7;
+}
+
+.groups .group:hover p,.groups .group:hover p span{
+    color: #0a82a4;
 }
 
 .group p{
@@ -412,6 +420,10 @@ h2{
     text-decoration: none;
 }
 
+#wotmlink:hover{
+    color: #2d90c1;
+}
+
 .wotm .row div{
     margin-left: 0.8rem;
 }
@@ -422,8 +434,12 @@ h2{
 
 #wotmimg{
     max-width: 30%;
+    border: 0.2rem solid rgba(0, 0, 0, 0);
 }
 
+#wotmimg:hover{
+    border: 0.2rem solid #59a4df;
+}
 
 .ad-bleets{
     width: 33%;
@@ -432,6 +448,15 @@ h2{
 .bleets img{
     width: 3rem;
     margin-right: 1rem;
+    border: 0.2rem solid rgba(0, 0, 0, 0);
+}
+
+.bleets:hover img{
+    border: 0.2rem solid #59a4df;
+}
+
+.bleets:hover h2{
+    color: #0a82a4;
 }
 
 .bleets .row:first-child{
@@ -460,13 +485,19 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     justify-content: space-between;
     margin-bottom: 1rem;
+    border: 0.2rem solid #f0f0f0;
+}
+
+.ad:hover{
+    border: 0.2rem solid #59a4df;
 }
 
 .ad p{
     color: #fff;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 .ad img{

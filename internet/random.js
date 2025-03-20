@@ -72,7 +72,7 @@ featuredSites.forEach((img, index) => {
     if (shuffledSites[index]) {
         const site = shuffledSites[index];
         img.src = "/internet/" + site[0];
-        img.alt = site[1];
+        img.alt = "/internet/sites/" + site[1];
         img.parentElement.href = site[1];
     }
 });
@@ -87,9 +87,9 @@ const wotmsite = allSites[randomIndex];
 wotmimg.src = "/internet/" + wotmsite[0];
 wotmimg.alt = wotmsite[1];
 wotmlink.textContent = wotmsite[1];
-wotmlink.href = wotmsite[3];
+wotmlink.href = "/internet/sites/" + wotmsite[3];
 wotmdesc.innerHTML = wotmsite[2];
 
 wotmimg.onclick = function() {
-    window.location.href = wotmsite[3];
+    window.location.href = "/internet/sites/" + wotmsite[3];
 };

@@ -126,7 +126,7 @@
                         <div class="wotm mainbox">
                             <h2>WEBSITE OF THE MINUTE</h2>
                             <div class="row">
-                                <img src="/internet/himplants.png" alt="Himplants Enhancement Surgery" id="wotmimg">
+                                <img class="clickable" src="/internet/himplants.png" alt="Himplants Enhancement Surgery" id="wotmimg">
                                 <div>
                                     <a id="wotmlink">www.himplantsenhancementsurgery.com</a><!--link to page-->
                                     <p id="wotmdesc" class="desc">Women aren't the only ones with body image and Daddy issues any more. Get the male implants you need and finally become you.</p>
@@ -139,7 +139,7 @@
                             <p>Sponsored Advert</p>
                             <img id="ad-img" src="/internet/legendary-motorsport.jpg" alt="Legendary Motorsport advert">
                         </a>
-                        <div class="bleets mainbox">
+                        <div class="bleets mainbox clickable">
                             <div class="row">
                                 <img src="/internet/bleeter.png" alt="Bleeter logo">
                                 <h2>RECENT BLEETS</h2>
@@ -208,9 +208,11 @@
         }else if(lastPage == 'mas'){
             SearchGroup('mas');
         }else if(lastPage == 'tat'){
-            SearchGroup('tat')
+            SearchGroup('tat');
         }else if(lastPage == 'fah'){
-            SearchGroup('fah')
+            SearchGroup('fah');
+        }else if(lastPage == 'random'){
+            SearchRandom();
         }
 
 
@@ -220,6 +222,9 @@
         //back button
         function backPage(){
             if (backURL) {
+                if(backURL = "/apps/internet.html"){
+                    sessionStorage.setItem('lastpage','home'); // temp fix until figure out storing recent pages (not actual pages, more queries)
+                }
                 window.location.href = backURL;
             } else {
                 window.history.back();

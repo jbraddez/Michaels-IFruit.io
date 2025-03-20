@@ -82,14 +82,17 @@ loadRandomStory();
 // -- - -- - -- -- -- --- -- -- -- - --  NEED TO ADD LINK ONCLICK WHEN PAGES MADE
 const ads = [['/legendary-motorsportad.jpg', 'Legendary Motorsport', 'legendary-motorsport.html'],
 ['/elitastravelad.png', 'Elitas Travel','elitastravel.html'],
-['/dockteasead.png', 'Dock Tease','docktease.html']]
+['/dockteasead.png', 'Dock Tease','docktease.html'],
+['/pedalandmetalad.png', 'Pedal and Metal', 'pedalandmetal.html'],
+['/southernsanandreasad.png','Southern San Andreas Super Autos', 'southern-san-andreas.html'],
+['lennyaveryad.png','Lenny Avery Realty', 'lenny-avery.html']]
 const adcont = document.querySelector('.ad');
 function loadAd(){
     const adImage = document.getElementById('ad-img');
 
     const randomIndex = Math.floor(Math.random() * ads.length);
     const ad = ads[randomIndex];
-    adImage.src = "/internet" + ad[0];
+    adImage.src = "/internet/" + ad[0];
     adImage.alt = ad[1];
     adcont.href = "/internet/sites/" + ad[2];
 }
