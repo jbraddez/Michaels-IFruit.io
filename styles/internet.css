@@ -495,6 +495,7 @@ h2{
 /* search results */
 .results{
     display: none;
+    margin-bottom: 2rem;
 }
 
 .resultsforparent{
