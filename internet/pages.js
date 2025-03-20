@@ -1,5 +1,13 @@
 // media and entertainment
-const mae = []; 
+const mae = [
+    ['lifeinvader.png','www.lifeinvader.com','The reason the world never gets anything done any more.','lifeinvader.html'],
+    ['classic_vinewood.png','www.classicvinewood.com','Sequels, remakes, romantic comedy sequels, superheroes, CGI nonsense and one-dimensional androgynous vampires.','classicvinewood.html'],
+    ['fameorshame.png','www.fameorshame.net','The talent show America deserves.','fameorshame.html'],
+    ['lazerforce.png','www.kungfurainbowlazerforce.com','Hey Kung Fu Rainbow Lazer Force Fans! On our official website you can learn more about the show, the characters, and how you can spread the word!','kungfulazerforce.html'],
+    ['princessrobotbubblegum.png','www.princessrobotbubblegum.com','The #3 hit show in Japan is back!','princessrobotbubblegum.html'],
+    ['republicanspacerangers.png','www.republicanspacerangers.com','Finally America has some heroes who know there are bigger issues than fretting about baby seals or endangered lizards or so called alobal warming.','republican-space-rangers.html'],
+    ['righteousslaughter7.png','www.righteousslaughter7.com','Misfire Games presents Righteous Slaughter 7: The Art of Contemporary Killing.','righteous-slaughter7.html']
+]; 
 
 // food and drink
 const fad = [
@@ -62,6 +70,8 @@ function SearchGroup(category){
                         <p class="desc">${service[2]}</p>
                     </div>
             `;
+            if(service[0] == 'lifeinvader.png'){
+            }
             resultseccont.appendChild(resultRow);
         });
 

@@ -516,6 +516,7 @@ h2{
 .result-row img{
     height: 100%;
     max-width: 30%;
+    background: #f0f0f0;
 }
 
 .url-desc{

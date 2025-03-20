@@ -80,9 +80,10 @@ loadRandomStory();
 
 //sponsored ad
 // -- - -- - -- -- -- --- -- -- -- - --  NEED TO ADD LINK ONCLICK WHEN PAGES MADE
-const ads = [['/legendary-motorsportad.jpg', 'Legendary Motorsport'],
-['/elitastravelad.png', 'Elitas Travel'],
-['/dockteasead.png', 'Dock Tease']]
+const ads = [['/legendary-motorsportad.jpg', 'Legendary Motorsport', 'legendary-motorsport.html'],
+['/elitastravelad.png', 'Elitas Travel','elitastravel.html'],
+['/dockteasead.png', 'Dock Tease','docktease.html']]
+const adcont = document.querySelector('.ad');
 function loadAd(){
     const adImage = document.getElementById('ad-img');
 
@@ -90,6 +91,7 @@ function loadAd(){
     const ad = ads[randomIndex];
     adImage.src = "/internet" + ad[0];
     adImage.alt = ad[1];
+    adcont.href = "/internet/sites/" + ad[2];
 }
 
 loadAd();
