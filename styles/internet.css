@@ -561,11 +561,22 @@ h2{
         height: fit-content;
     }
     .result-row img{
-        height: fit-content;
+        height: min-content;
+        aspect-ratio: 2/1;
+    }
+    .resultsforparent{
+        font-size: 1.3rem;
+        margin: 1.5rem 0.2rem;
     }
     .url-desc{
-        font-size: 1rem;
+        font-size: 0.9rem;
         margin-left: 0.5rem;
+    }
+    .url{
+        margin-bottom: 0.5rem;
+    }
+    .url-desc .desc{
+        font-size: 0.8rem;
     }
     .groups .group p{
         display: none;
