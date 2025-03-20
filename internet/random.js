@@ -59,3 +59,37 @@ function SearchRandom() {
         resultseccont.appendChild(resultRow);
     });
 }
+
+const featuredSites = document.querySelectorAll('.featured-site-img');
+
+function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+const shuffledSites = shuffleArray([...allSites]);
+
+featuredSites.forEach((img, index) => {
+    if (shuffledSites[index]) {
+        const site = shuffledSites[index];
+        img.src = "/internet/" + site[0];
+        img.alt = site[1];
+        img.parentElement.href = site[1];
+    }
+});
+
+
+const wotmimg = document.getElementById('wotmimg');
+const wotmlink = document.getElementById('wotmlink');
+const wotmdesc = document.getElementById('wotmdesc');
+
+let randomIndex = Math.floor(Math.random() * allSites.length);
+const wotmsite = allSites[randomIndex];
+wotmimg.src = "/internet/" + wotmsite[0];
+wotmimg.alt = wotmsite[1];
+wotmlink.textContent = wotmsite[1];
+wotmlink.href = wotmsite[3];
+wotmdesc.innerHTML = wotmsite[2];
+
+wotmimg.onclick = function() {
+    window.location.href = wotmsite[3];
+};
