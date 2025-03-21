@@ -15,6 +15,7 @@ body {
 }
 
 .maincontent{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -34,7 +35,7 @@ body {
 
 .carsbox {
     padding: 1rem;
-    background: #2c0001;
+    background: linear-gradient(#2c0001 50%, transparent 50%);
     transform: translateY(-2.5rem);
     width: 90%;
     max-width: 800px;
@@ -49,7 +50,7 @@ body {
     left: 0;
     height: 100%;
     width: 0.2rem; 
-    background: linear-gradient(to bottom, #7a090b, transparent);
+    background: linear-gradient(to bottom, #7a090b, transparent 20%);
 }
 
 .carsbox::after {
@@ -59,7 +60,7 @@ body {
     right: 0;
     height: 100%;
     width: 0.2rem; 
-    background: linear-gradient(to bottom, #7a090b, transparent);
+    background: linear-gradient(to bottom, #7a090b, transparent 30%);
 }
 
 
@@ -102,10 +103,34 @@ body {
     flex-direction: column;
     margin: 0.5rem;
 }
+.car::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%; 
+    transform: translateY(1px);
+    background: linear-gradient(to right, rgba(250,250,250,0.8) 2%, transparent 20%);
+}
+
+.car::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    transform: translate(-1px,1px);
+    width: 1px; 
+    background: linear-gradient(to top, rgba(250,250,250,0.8) 2%, transparent 20%);
+}
+
+
 .carbot{
     background: #000;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0.2rem;
 }
 
@@ -136,8 +161,43 @@ body {
     overflow: scroll;
 }
 
+.carname{
+    max-height: 1lh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .carprice{
-    margin: 0 0.5rem;
+    width: fit-content;
+    height: 100%;
+    padding: 0.2rem;
+    background: linear-gradient(to top, #e40406,#e40406);
+}
+
+.bottom{
+    background: #000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    border-top: 0.5rem solid #831014;
+}
+
+.bottom img{
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+}
+
+.bottombg{
+    background: #f0f0f0;
+    height: 40svh;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
 }
 
 @media screen and (max-width: 830px){

@@ -22,6 +22,7 @@ function displayCars() {
     carsData.forEach(car => {
         const carElement = document.createElement('div');
         carElement.classList.add('car');
+        carElement.classList.add('clickable');
         carElement.innerHTML = `
             <div class="cartop">
                 <p class="category">${car.category.toUpperCase()}</p>
