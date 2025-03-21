@@ -144,6 +144,10 @@ body {
     .car p{
         font-size: 0.65rem;
     }
+
+    .top{
+        font-size: 0.7rem;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -155,5 +159,36 @@ body {
         margin: 0.2rem;
         max-width: 45%;
         overflow: hidden;
+    }
+    .top{
+        font-size: 0.5rem;
+    }
+    #sortby{
+        font-size: 0.6rem;
+        width: 35%;
+    }
+
+    .carsboxtop h2{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #sortby{
+        font-size: 0.5rem;
+        width: 40%;
+    }
+
+    .carsboxtop h2{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .top{
+        font-size: 0.3rem;
+    }
+    .carsboxtop h2{
+        font-size: 0.8rem;
     }
 }
