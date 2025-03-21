@@ -115,9 +115,20 @@ main{
     border-bottom: 0.1rem solid #bfbfbf;
 }
 
+
+/* foreclosures */
+#underconstruction{
+    color: #ff2935;
+    font-size: 3rem;
+    text-align: center;
+}
+
 @media screen and (max-width: 865px){
     .logocont p{
         font-size: 1rem;
+    }
+    #underconstruction{
+        font-size: 2.5rem;
     }
 }
 
@@ -131,6 +142,9 @@ main{
     }
     #ATtext{
         font-size: 1.2rem;
+    }
+    #underconstruction{
+        font-size: 1.9rem;
     }
 }
 
@@ -147,6 +161,9 @@ main{
     #ATtext{
         font-size: 1rem;
     }
+    #underconstruction{
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 472px){
@@ -162,6 +179,9 @@ main{
     }
     #ATtext{
         font-size: 0.8rem;
+    }
+    #underconstruction{
+        font-size: 1rem;
     }
 }
 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFruit - Michael De Santa</title>
+    <link rel="website icon" href="./images/ifruit.webp">
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="IFruit">
+    <meta name="description" content="A fanmade website of Michael De Santa's IFruit phone from GTAV story mode.">
+    <meta name="author" content="Jacob Bradley">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/ifruit.webp">
+    <link rel="mask-icon" href="/images/ifruit.webp" color="#000000">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta property="og:title" content="Michael's IFruit">
+    <meta property="og:description" content="A fanmade website of Michael De Santa's IFruit phone from GTAV story mode.">
+    <meta property="og:image" content="/images/ifruit.webp">
+    <meta property="og:type" content="website">
+
+    <link rel="shortcut icon" href="/images/ifruit.webp">
+    <link rel="icon" sizes="192x192" href="/images/ifruit.webp">
+    <link rel="icon" sizes="512x512" href="/images/ifruit.webp">
+
+    <link rel="apple-touch-startup-image" href="/wallpapers/1.jpg">
+    <link rel="stylesheet" href="/styles/internet.css">
+    <meta name="screen-orientation" content="landscape">
+    <link rel="stylesheet" href="/internet/sites/styles/maze-bank.css">
+    <style>
+        body{
+            background: #ebebeb;
+            background-image: none;
+        }
+
+        #toplogocont{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            padding: 0.5rem;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        strong{
+            font-weight: 600;
+        }
+
+        h2{
+            font-weight: 300;
+        }
+
+        .smalllogo{
+            max-width: 30%;
+            max-height: 3rem;
+        }
+
+        .maincontent{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+    <main>
+        <div class="top"><p style="color: #fefefe;">The Number 1 site for foreclosed properties</p></div>
+        <div class="navigation">
+            <div class="content">
+                <div class="back-forward">
+                    <button class="backbtn active" onclick="backPage()">
+                        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="70,20 20,50 70,80" />
+                          </svg>                                           
+                    </button>
+                    <button id="fwdbtn">
+                        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="30,20 80,50 30,80"/>
+                          </svg>                                  
+                    </button>
+                </div>
+                <button class="home"><img src="/images/home.png" alt="Home"></button>
+                <button class="history">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+                    <svg class="dropdown" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-360 280-560h400L480-360Z"/></svg>
+                </button>
+                <div class="search">
+                    <input id="url-box" type="text" placeholder="foreclosures.maze-bank.com">
+                    <button class="x"></button>
+                </div>
+            </div>
+        </div>
+        <div id="toplogocont">
+            <img class="smalllogo" src="/internet/mazebanklogo.png" alt="Maze Bank foreclosures">
+            <h2><strong>FORE</strong>CLOSURES</h2>
+        </div>
+        <div class="topborder" style="height: 0.5rem;"></div>
+        <div class="maincontent content" style="padding-top: 0;">
+            <h1 id="underconstruction">WEBSITE UNDER CONSTRUCTION</h1>
+        </div>
+    </main>
+
+
+
+    <script src="/internet/buttons.js"></script>
+    <script>
+        //back button
+        function backPage(){
+                window.history.back();
+        }
+    </script>
+</body>
+</html>
