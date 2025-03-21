@@ -1,0 +1,159 @@
+body {
+    background-color: #671112; 
+    background-image: 
+      linear-gradient(-135deg, rgba(92, 4, 5, 1) 25%, transparent 26%) ,
+      linear-gradient(135deg, rgba(92, 4, 5, 1) 25%, transparent 26%),
+      linear-gradient(45deg, rgba(92, 4, 5, 1) 25%, transparent 26%),
+      linear-gradient(-45deg, rgba(92, 4, 5, 1) 25%, transparent 26%);
+    background-size: 0.5rem 0.5rem; 
+    background-repeat: repeat;
+  }
+
+.topborder{
+    background: #831014;
+    height: 0.5rem;
+}
+
+.maincontent{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-bottom: 0;
+    flex-direction: column;
+    background: transparent;
+}
+.bannercont{
+    position: relative;
+    height: fit-content;
+}
+.topbanner{
+    width: 100%;
+    border-bottom: 0.5rem solid #b50d0c;
+    box-shadow: 0.5rem 0.5rem 8rem rgba(0, 0, 0, 0.6);
+}
+
+.carsbox {
+    padding: 1rem;
+    background: #2c0001;
+    transform: translateY(-2.5rem);
+    width: 90%;
+    max-width: 800px;
+    border-top: 0.2rem solid #7a090b;
+    position: relative;
+}
+
+.carsbox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0.2rem; 
+    background: linear-gradient(to bottom, #7a090b, transparent);
+}
+
+.carsbox::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0.2rem; 
+    background: linear-gradient(to bottom, #7a090b, transparent);
+}
+
+
+.carsboxtop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sortby{
+    padding: 0.5rem;
+    margin-right: 1rem;
+    width: 25%;
+    border: 0.1rem solid #580808;
+    color: #fefefe;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.3rem;
+    max-width: 70%;
+    background: linear-gradient(to bottom, #e40406,#e40406);
+}
+
+#sortby #sortdir{
+    height: 200%;
+    fill: #fefefe;
+}
+
+.cars {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+  
+.car{
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+.carbot{
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem;
+}
+
+.car p{
+    font-size: 0.8rem;
+}
+
+.carbot p{
+    color: #fefefe;
+}
+.cartop{
+    width: 100%;
+    background: linear-gradient(to bottom, #ececea 50%,#d9d8d9 50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 2rem;
+    padding: 0.2rem 0.5rem;
+}
+
+.cartop img{
+    max-height: 100%;
+}
+
+.category{
+    color: #000;
+    max-height: 2lh;
+    overflow: scroll;
+}
+
+.carprice{
+    margin: 0 0.5rem;
+}
+
+@media screen and (max-width: 830px){
+    .car p{
+        font-size: 0.65rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .car p{
+        font-size: 0.5rem;
+    }
+
+    .car{
+        margin: 0.2rem;
+        max-width: 45%;
+        overflow: hidden;
+    }
+}
