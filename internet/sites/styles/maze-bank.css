@@ -1,0 +1,176 @@
+body {
+    background-image: url('/internet/maze-bank-small.png'); 
+    background-size: 4rem 4rem;
+    background-repeat: repeat;
+    background-position: 0 0, 2rem 2rem; 
+}
+
+
+canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+main{
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+.maincontent{
+    height: 100%;
+    flex: 1;
+    width: 100%;
+    padding: 0 2rem;
+}
+.maincontent.content{
+    height: 100%;
+    background: #ebebeb;
+}
+.topborder{
+    height: 1rem;
+    background: linear-gradient(to bottom, #e9252f, #ff2935);
+}
+
+.logo{
+    max-height: 5rem;
+    margin: 1rem;
+    margin-top: 1.5rem;
+    max-width: 50%;
+}
+
+.text{
+    margin: 7rem 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text h3{
+    font-size: 1.9rem;
+    text-align: center;
+}
+
+#viewtransactions{
+    padding: 1.5rem;
+    border: 0.2rem solid #be2a38;
+    border-radius: 0.3rem;
+    margin-top: 4rem;
+    max-width: 70%;
+    background: linear-gradient(to bottom, #ff313b,#ef2e48);
+}
+
+#viewtransactions h3{
+    color: #fefefe;
+    font-weight: 300;
+}
+
+#viewtransactions:hover{
+    background: linear-gradient(to top, #ff313b,#ef2e48);
+}
+@media screen and (min-width:769px){
+#viewtransactions h3{
+    font-size: 1.5rem;
+}
+}
+
+.name-transactions{
+    background: linear-gradient(to top, #ff313b,#ef2e48);
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+
+.name-transactions h1, .name-transactions h2{
+    color: #fefefe;
+}
+
+.logocont{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.logocont p{
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#balancecont, #balancecont span{
+    color: #686868;
+}
+
+#transactions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4rem;
+    padding: 0.2rem 1rem;
+    border-top: 0.1rem solid #bfbfbf;
+    border-bottom: 0.1rem solid #bfbfbf;
+}
+
+@media screen and (max-width: 865px){
+    .logocont p{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .text h3,#name{
+        font-size: 1.5rem;
+    }
+
+    .logo{
+        max-height: 4rem;
+    }
+    #ATtext{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 590px){
+    .text h3,#name{
+        font-size: 1.2rem;
+    }
+    .maincontent{
+        padding: 0 0.5rem;
+    }
+    .logocont p{
+        font-size: 0.7rem;
+    }
+    #ATtext{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 472px){
+    .text h3,#name{
+        font-size: 1rem;
+    }
+    .logo{
+        max-height: 3rem;
+    }
+
+    .logocont p{
+        font-size: 0.5rem;
+    }
+    #ATtext{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .text h3,#name,#ATtext{
+        font-size: 0.8rem;
+    }
+
+    #transactions h3{
+        font-size: 1rem;
+    }
+}

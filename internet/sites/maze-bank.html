@@ -27,38 +27,18 @@
     <link rel="apple-touch-startup-image" href="/wallpapers/1.jpg">
     <link rel="stylesheet" href="/styles/internet.css">
     <meta name="screen-orientation" content="landscape">
-    <style>
-        .maincontent{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .row1{
-            margin-bottom: 3rem;
-        }
-
-        .maincontent img{
-            max-width: 95%;
-        }
-
-        @media screen and (max-width: 768px){
-           .row1{
-            margin-bottom: 1rem;
-           }
-
-        }
-    </style>
+    <script src="/internet/sites/js/maze-bank.js"></script>
+    <link rel="stylesheet" href="/internet/sites/styles/maze-bank.css">
 </head>
 <body>
 
 
     <main>
-        <div class="top"><p>--- EYEFIND... It's like a series of tubes ---</p></div>
+        <div class="top"><p style="color: transparent;">placeholder</p></div>
         <div class="navigation">
             <div class="content">
                 <div class="back-forward">
-                    <button class="backbtn" onclick="backPage()">
+                    <button class="backbtn active" onclick="backPage()">
                         <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <polygon points="70,20 20,50 70,80" />
                           </svg>                                           
@@ -75,24 +55,31 @@
                     <svg class="dropdown" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-360 280-560h400L480-360Z"/></svg>
                 </button>
                 <div class="search">
-                    <input id="url-box" type="text" placeholder="www.eyefind.info/error">
+                    <input id="url-box" type="text" placeholder="www.maze-bank.com">
                     <button class="x"></button>
                 </div>
             </div>
         </div>
-        <div class="info-cont">
-            <div class="content">
-                <div class="row1">
-                    <img class="logo" src="/images/eyefind.webp" alt="Eyefind logo">
+        <div class="topborder"></div>
+        <div class="maincontent content" style="padding-top: 0;">
+                <img class="logo" src="/internet/mazebanklogo.png" alt="Maze Bank">
+                <hr style="border: 0.1rem solid #ff3542; ">
+                <div class="text">
+                    <h3>Welcome Back</h3>
+                    <h3>Michael De Santa</h3>
+                    <button onclick="window.location.href='/internet/sites/maze-bank-transactions.html';" id="viewtransactions"><h3>View Account Transactions</h3></button>
                 </div>
-            </div>
         </div>
-        <hr class="yellowband">
-    <div class="maincontent">
-        <img style="border-radius: 1rem;" src="/internet/404.png" alt="404 Page not Found">
-    </div>        
     </main>
 
+
+
     <script src="/internet/buttons.js"></script>
+    <script>
+        //back button
+        function backPage(){
+                window.history.back();
+        }
+    </script>
 </body>
 </html>

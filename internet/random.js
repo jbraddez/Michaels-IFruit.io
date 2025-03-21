@@ -13,7 +13,7 @@ const allSites = [
     ['lcn.png', 'www.lcn-exchange.com', 'The Liberty City exchange index.', 'lcn-exchange.html'],
     ['bawsaq.png', 'www.bawsaq.com', "Dealing in life's ups and downs.", 'bawsaq.html'],
     ['dynasty8.png', 'www.dynasty8realestate.com', 'The leading realtor in Los Santos and Blaine County.', 'dynasty8.html'],
-    ['mazebank.png', 'www.maze-bank.com', "Invest in the red. It's in your interest.", 'mazebank.html'],
+    ['mazebank.png', 'www.maze-bank.com', "Invest in the red. It's in your interest.", 'maze-bank.html'],
     ['fleecabank.png', 'www.fleeca.com', 'We can help you with your money.', 'fleeca.html'],
     ['bolc.png', 'www.thebankofliberty.com', 'The bank of Liberty City.', 'bankofliberty.html'],
     ['elitastravel.png', 'www.elitastravel.com', 'Browse our current inventory of new and pre-owned aircraft. Helicopters or planes, we have everything.', 'elitastravel.html'],
@@ -28,6 +28,7 @@ const allSites = [
     ['preserveskincream.png','www.preservexskincream.com','The timeless beauty of formaldehyde.','preserve-skin-cream.html'],
     ['prop14.png','www.abstinentamerica.com','Imagine how fast paced and exciting a baseball game would be without beer.<span class="newline desc">Imagine how lovely a 6 hour wedding would be without wine.</span><span class="newline desc">Imagine the delights of Mexican food without Margaritas.</span>','abstinentamerica.html'],
     ['fabienlarouche.png','www.fabienlaroucheyoga.com',"Yoga unifies the mind and body while freeing you from the limitations of dignity and self-respect. It's a workout, a philosophy and a metaphor all rolled into one. It is everything. It is nothing. Be. Be nothing.",'fabien-larouche.html']
+    ['himplants.png','www.himplantsenhancementsurgery.com',"Women aren't the only ones with body image and Daddy issues any more. Get the male implants you need and finally become you.",'himplants.html']
 ]
 
 function SearchRandom() {

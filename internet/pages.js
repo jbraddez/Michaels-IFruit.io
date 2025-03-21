@@ -22,7 +22,7 @@ const mas = [
     ['lcn.png', 'www.lcn-exchange.com', 'The Liberty City exchange index.', 'lcn-exchange.html'],
     ['bawsaq.png', 'www.bawsaq.com', "Dealing in life's ups and downs.", 'bawsaq.html'],
     ['dynasty8.png', 'www.dynasty8realestate.com', 'The leading realtor in Los Santos and Blaine County.', 'dynasty8.html'],
-    ['mazebank.png', 'www.maze-bank.com', "Invest in the red. It's in your interest.", 'mazebank.html'],
+    ['mazebank.png', 'www.maze-bank.com', "Invest in the red. It's in your interest.", 'maze-bank.html'],
     ['fleecabank.png', 'www.fleeca.com', 'We can help you with your money.', 'fleeca.html'],
     ['bolc.png', 'www.thebankofliberty.com', 'The bank of Liberty City.', 'bankofliberty.html']
 ]; 
@@ -53,6 +53,7 @@ const resultsfor = document.getElementById('resultsfor');
 const maincontent = document.querySelector('.maincontent');
 const urlph = document.getElementById('url-box').placeholder;
 function SearchGroup(category){
+    document.querySelector('.backbtn').classList.add('active');
     resultseccont.innerHTML="";
     maincontent.style.display = 'none';
     resultsec.style.display = 'block';
