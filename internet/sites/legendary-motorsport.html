@@ -64,6 +64,56 @@
         <div class="maincontent" style="padding-top: 0;">
             <div class="bannercont"><img class="topbanner" src="/internet/lm-banner.png" alt="background"></div>
             <div class="carsbox">
+                <div id="cardetails">
+                    <div class="line1">
+                        <div>
+                            <img id="detail-logo" src="/internet/lm-cars/brands/Coil.png" alt="Brand logo">
+                            <h2 id="detail-name">Brawler</h2>
+                        </div>
+                        <h2 id="detail-price">$715,000</h2>
+                    </div>
+                    <div id="main-details">
+                        <div id="left-side">
+                            <p id="detail-desc">Everything else from the 80s has aged. The Rapid GT Classic has only matured. Like a fine claret or a really good boob job, each passing year adds something mysterious to its allure. Sure, that new sports coupé is half the weight, and it has a cleaner transmission. But trust us: get inside this vintage, experience the kind of technique and self-assurance only time can bestow, and you'll never waste your time on a younger model again.</p>
+                            <p>SELECT FROM AVAILABLE COLORS TO ORDER</p>
+                            <div class="colors">
+                                <div class="row1col">
+                                    <div style="background: #df0800;" class="color clickable"></div>
+                                    <div style="background: #ff00a4;" class="color clickable"></div>
+                                    <div style="background: #f6f500;" class="color clickable"></div>
+                                    <div style="background: #fcac07;" class="color clickable"></div>
+                                </div>
+                                <div class="row2col">
+                                    <div style="background: #65cd33;" class="color clickable"></div>
+                                    <div style="background: #006fdd;" class="color clickable"></div>
+                                    <div style="background: #1d1d1d; border: 0.1rem solid #f1f1f1" class="color clickable"></div>
+                                    <div style="background: #f1f1f1;" class="color clickable"></div>
+                                </div>
+                            </div>
+                            <div class="stats">
+                                <h2>Vehicle Stats</h2>
+                                <div class="stat">
+                                    <p>Top Speed</p>
+                                    <div class="bar"><div id="speed" class="bar-stat"></div></div>
+                                </div>
+                                <div class="stat">
+                                    <p>Acceleration</p>
+                                    <div class="bar"><div id="acceleration" class="bar-stat"></div></div>
+                                </div>
+                                <div class="stat">
+                                    <p>Braking</p>
+                                    <div class="bar"><div id="braking" class="bar-stat"></div></div>
+                                </div>
+                                <div class="stat">
+                                    <p>Traction</p>
+                                    <div class="bar"><div id="traction" class="bar-stat"></div></div>
+                                </div>
+                            </div>
+                            <button class="order">ORDER</button>
+                        </div>
+                    <img id="detail-img" src="/internet/lm-cars/3_details.png" alt="Car closeups">
+                </div>
+                </div>
                 <div class="carsboxtop">
                     <h2 style="color: #fefefe;">ALL VEHICLES</h2>
                     <button onclick="toggleSortDirection()" id="sortby">Sort by Price <div id="sortdir"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-440v-80h560v80H200Z"/></svg></div></button>
@@ -96,7 +146,11 @@
     <script>
         //back button
         function backPage(){
-                window.history.back();
+                if(backHome){
+                    window.location.href = "/internet/sites/legendary-motorsport.html";
+                }else{
+                    window.history.back();
+                }
         }
     </script>
 </body>
