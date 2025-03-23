@@ -74,8 +74,8 @@ featuredSites.forEach((img, index) => {
     if (shuffledSites[index]) {
         const site = shuffledSites[index];
         img.src = "/internet/" + site[0];
-        img.alt = "/internet/sites/" + site[1];
-        img.parentElement.href = site[1];
+        img.alt = site[1];
+        img.parentElement.href = "/internet/sites/" + site[3];
     }
 });
 
