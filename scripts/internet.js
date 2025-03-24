@@ -80,11 +80,11 @@ loadRandomStory();
 
 //sponsored ad
 // -- - -- - -- -- -- --- -- -- -- - --  NEED TO ADD LINK ONCLICK WHEN PAGES MADE
-const ads = [['/legendary-motorsportad.jpg', 'Legendary Motorsport', 'legendary-motorsport.html'],
-['/elitastravelad.png', 'Elitas Travel','elitastravel.html'],
-['/dockteasead.png', 'Dock Tease','docktease.html'],
-['/pedalandmetalad.png', 'Pedal and Metal', 'pedalandmetal.html'],
-['/southernsanandreasad.png','Southern San Andreas Super Autos', 'southern-san-andreas.html'],
+const ads = [['legendary-motorsportad.jpg', 'Legendary Motorsport', 'legendary-motorsport.html'],
+['elitastravelad.png', 'Elitas Travel','elitastravel.html'],
+['dockteasead.png', 'Dock Tease','docktease.html'],
+['pedalandmetalad.png', 'Pedal and Metal', 'pedalandmetal.html'],
+['southernsanandreasad.png','Southern San Andreas Super Autos', 'southern-san-andreas.html'],
 ['lennyaveryad.png','Lenny Avery Realty', 'lenny-avery.html']]
 const adcont = document.querySelector('.ad');
 function loadAd(){

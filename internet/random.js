@@ -29,7 +29,9 @@ const allSites = [
     ['prop14.png','www.abstinentamerica.com','Imagine how fast paced and exciting a baseball game would be without beer.<span class="newline desc">Imagine how lovely a 6 hour wedding would be without wine.</span><span class="newline desc">Imagine the delights of Mexican food without Margaritas.</span>','abstinentamerica.html'],
     ['fabienlarouche.png','www.fabienlaroucheyoga.com',"Yoga unifies the mind and body while freeing you from the limitations of dignity and self-respect. It's a workout, a philosophy and a metaphor all rolled into one. It is everything. It is nothing. Be. Be nothing.",'fabien-larouche.html']
     ['himplants.png','www.himplantsenhancementsurgery.com',"Women aren't the only ones with body image and Daddy issues any more. Get the male implants you need and finally become you.",'himplants.html'],
-    ['maze-bank-foreclosures.png','foreclosures.maze-bank.com','The Number 1 site for foreclosed properties.','maze-bank-foreclosures.html']
+    ['maze-bank-foreclosures.png','foreclosures.maze-bank.com','The Number 1 site for foreclosed properties.','maze-bank-foreclosures.html'],
+    ['stoppayingyourmortgage.png','www.stoppayingyourmortgage.net','The banks failed you! Time to fail them!','stoppayingyourmortgage.html'],
+    ['lennyaverysmall.png','www.lennyavery-realty.com','A Los Santos-based real estate company that specializes in finding gaudy, overpriced mansions for the Vinewood nouveau riche.','lenny-avery.html']
 ]
 
 function SearchRandom() {
