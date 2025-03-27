@@ -1,0 +1,14 @@
+body{
+    background: linear-gradient(to bottom, #2d4ebb,#85a2e3);
+}
+
+.maincontent{
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+    margin: 0 auto;
+}
+
+.topsec>img{
+    width: 100%;
+}
