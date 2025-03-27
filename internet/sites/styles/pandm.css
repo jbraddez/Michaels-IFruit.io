@@ -1,0 +1,180 @@
+.banner{
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.sortrow .content{
+    width: 100%;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.sortrow{
+    width: 100%;
+    background: linear-gradient(to top, #181718, #313131);
+    box-shadow: 0 0.4rem 0.1rem rgba(0, 0, 0, 0.35);
+}
+
+#sortby{
+    padding: 0.5rem;
+    margin-right: 1rem;
+    width: 25%;
+    border: 0.1rem solid #6c6c6d;
+    color: #fefefe;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.3rem;
+    max-width: 70%;
+    background: linear-gradient(to bottom, #bab9ba,#bab9ba);
+    font-size: 1rem;
+    height: 100%;
+}
+
+h2{
+    font-size: 2rem;
+    color: #fefefe;
+}
+
+#sortby:hover,.order:hover{
+    background: linear-gradient(to top, #181718, #313131);
+    border-color: #1f1f1f;
+}
+
+#sortby #sortdir{
+    height: 200%;
+    fill: #fefefe;
+}
+
+body{
+    background: #303030;
+}
+
+.maincontent{
+    background: linear-gradient(to bottom, #262626, #303030);
+}
+
+.bikes{
+    background: #121212;
+    width: 100%;
+    padding: 1rem;
+}
+
+.row1,.row2{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: 0.5rem;
+}
+
+.biketop{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    height: 3rem;
+    width: 100%;
+}
+
+.biketop img{
+    height: 100%;
+}
+
+.bike{
+    background: #090909;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bikebot{
+    width: 100%;
+}
+
+.name,.price{
+    color: #fefefe;
+}
+
+.bikebot{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+
+
+.bike{
+    width: 32%;
+    position: relative;
+}
+
+.bikeimgcont{
+    background: pink;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    aspect-ratio: 2/1;
+}
+
+#bmx{
+    background-image: url(/internet/bikes/s-bmx.png);
+}
+
+#scorcher{
+    background-image: url(/internet/bikes/s-scorcher.png);
+}
+
+#whippet{
+    background-image: url(/internet/bikes/s-whippet.png);
+}
+
+#tricycles{
+    background-image: url(/internet/bikes/s-tricycles.png);
+}
+
+#endurex{
+    background-image: url(/internet/bikes/s-endurex.png);
+}
+
+#cruiser{
+    background-image: url(/internet/bikes/s-cruiser.png);
+}
+
+
+
+/*
+DESCRIPTIONS
+
+BMX:
+The classic bike for tooling the neighborhood or doing a double peg grind. Reinforced steel, super comfortable seat that won't cut off the circulation to your scrotum too bad. (i.e., for wimps!)
+A great deal for the cash-strapped.
+
+SCHORCHER:
+San Andreas is full of some epic places to take this off-road beast. Comes with a mud flap so your back doesn't look like you've had a train run on you by lumberjacks.
+High torque cranks sound really
+impressive if you know what it means, and also ensure it's nimble on a trail but also stable at high speed, when you are on the cusp of losing control and flying over the handlebars.
+
+WHIPPET:
+High strength carbon fiber frame, super-stable fork, alloy rims, this road bike will let people know you are serious about a sport made obsolete by combustion engines years ago.
+Get serious about working out by spending a lot of money on gear right now.
+
+CRUISER:
+This beach cruiser is top of the line relaxation. Made in America, which explains why you're paying 6 times the price of foreign made beach cruisers. But when you're out for a beautiful day in the sunshine and feel like stopping by your ex-girlfriend's house to key her car, you want to look relaxed and inconspicuous.
+It's for the guy who says "I'm so god damn relaxed, I just don't care that I'm paying several grand for a bike that goes slowly on flat paths by the beach and doesn't even have brakes."
+
+TRICYLCES:
+Everyone at the triathlon will know you are serious about a sport where participants push themselves to the point of losing control of their bowels when you ride up on this beauty.
+Adjustable seat and padded grips make for an excellent afternoon in the park, hunched over on a bike you're terrified will get stolen if you stop for lunch.
+Step up. Pay up. Front up.
+
+ENDUREX:
+The Endurex is a step up from the original Whippet in that it's red which will perfectly match the bloody knees you will get from trying to maneuver a bike with wheels a half inch wide.
+You deserve this bike. You feel thinner already.
+
+
+
+*/
