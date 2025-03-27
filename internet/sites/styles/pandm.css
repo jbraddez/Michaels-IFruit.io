@@ -176,6 +176,7 @@ p{
     width: 60%;
     margin: 1rem;
     height: fit-content;
+    aspect-ratio: 1/1;
 }
 .rightside{
     margin: 1rem;
