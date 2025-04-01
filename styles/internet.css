@@ -398,6 +398,7 @@ h2{
     margin-left: 1rem;
     width: 40%;
     display: block !important;
+    height: 100%;
 }
 .news.fullopen .story{
     height: fit-content;
